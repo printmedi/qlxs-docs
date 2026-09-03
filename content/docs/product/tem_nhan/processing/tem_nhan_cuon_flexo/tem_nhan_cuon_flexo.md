@@ -364,14 +364,53 @@ sleeve, IML, linerless, tem nhiều lớp hoặc in kỹ thuật số cuộn.
 {{< katex >}}T_{s,setup}{{< /katex >}}: Thời gian setup máy chia cuộn (Phút)<br>
 
   {{< /details >}}
+- **Cán màng tem**
+  * *Cán màng bảo vệ trên web tem. Bằng 0 khi đơn không cán màng.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCLAM
+  * *Kí hiệu*: {{< katex >}}T_l{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{b_l * (L_t / v_l + T_{l,setup})}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}b_l{{< /katex >}}: Có cán màng tem (Có/Không)<br>
+{{< katex >}}L_t{{< /katex >}}: Tổng chiều dài web cần chạy (m)<br>
+{{< katex >}}v_l{{< /katex >}}: Tốc độ planning cán màng tem (m/Phút)<br>
+{{< katex >}}T_{l,setup}{{< /katex >}}: Thời gian setup cán màng tem (Phút)<br>
+
+  {{< /details >}}
+- **Ép nhũ tem**
+  * *Ép nhũ trên web tem, không phân biệt nhũ nóng hay nhũ lạnh. Bằng 0 khi đơn không ép nhũ.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCFOIL
+  * *Kí hiệu*: {{< katex >}}T_f{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{b_f * (L_t / v_f + T_{f,setup})}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}b_f{{< /katex >}}: Có ép nhũ tem (Có/Không)<br>
+{{< katex >}}L_t{{< /katex >}}: Tổng chiều dài web cần chạy (m)<br>
+{{< katex >}}v_f{{< /katex >}}: Tốc độ planning ép nhũ (m/Phút)<br>
+{{< katex >}}T_{f,setup}{{< /katex >}}: Thời gian setup ép nhũ (Phút)<br>
+
+  {{< /details >}}
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho khâu hoàn thiện chưa mô hình hoá. Không suy diễn, chỉ lấy đúng số người dùng nhập.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCOTHR
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+  * *Công thức* :{{< katex >}}T_{other}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}T_{other}{{< /katex >}}: Thời gian hoàn thiện khác (Phút)<br>
+
+  {{< /details >}}
 - **Tổng thời gian hoàn thiện**
-  * *Tổng stage hoàn thiện được processing bật.*
+  * *Tổng các stage hoàn thiện được processing bật — chia cuộn, cán màng, ép nhũ và ô nhập tay.*
   * *Đơn vị*: Phút
   * *Mã*: TCCTCOMP
   * *Kí hiệu*: {{< katex >}}T_{finish}{{< /katex >}}
-  * *Công thức* :{{< katex >}}T_s{{< /katex >}}
+  * *Công thức* :{{< katex >}}T_s + T_l + T_f + T_{other}{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}T_s{{< /katex >}}: Chia cuộn tem (Phút)<br>
+{{< katex >}}T_l{{< /katex >}}: Cán màng tem (Phút)<br>
+{{< katex >}}T_f{{< /katex >}}: Ép nhũ tem (Phút)<br>
+{{< katex >}}T_{other}{{< /katex >}}: Thời gian hoàn thiện khác (Phút)<br>
 
   {{< /details >}}
 - **Tổng thời gian sản xuất**

@@ -133,5 +133,17 @@ Dưới đây là những tham số liên quan tới thiết lập nguyên vật
   * *Mã*: TMINROLLQTY
   * *Kí hiệu*: {{< katex >}}q_{roll}{{< /katex >}}
 
+- **Có cán màng tem**
+  * *1 = đơn có cán màng bảo vệ, 0 = không cán. Bằng 0 thì công đoạn cán màng không tốn phút nào.*
+  * *Đơn vị*: Có/Không
+  * *Mã*: TMINLAMON
+  * *Kí hiệu*: {{< katex >}}b_l{{< /katex >}}
+  * *Tập giá trị*: •  0  	•  1  	
+- **Có ép nhũ tem**
+  * *1 = đơn có ép nhũ (không phân biệt nhũ nóng hay nhũ lạnh), 0 = không. Bằng 0 thì công đoạn ép nhũ không tốn phút nào.*
+  * *Đơn vị*: Có/Không
+  * *Mã*: TMINFOILON
+  * *Kí hiệu*: {{< katex >}}b_f{{< /katex >}}
+  * *Tập giá trị*: •  0  	•  1  	
 
 

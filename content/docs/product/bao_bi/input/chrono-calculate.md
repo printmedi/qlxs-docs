@@ -91,8 +91,14 @@ Dưới đây là những kết quả tính toán liên quan tới giá trị th
   * *Mã*: BBCTPACK
   * *Kí hiệu*: {{< katex >}}T_b{{< /katex >}}
 
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho khâu hoàn thiện chưa mô hình hoá. Không suy diễn, chỉ lấy đúng số người dùng nhập.*
+  * *Đơn vị*: Phút
+  * *Mã*: BBCTOTHR
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+
 - **Tổng thời gian hoàn thiện**
-  * *Pha cắt tờ, bế/cấn/tách phế, gấp-dán và đóng gói hộp phẳng.*
+  * *Pha cắt tờ, bế/cấn/tách phế, gấp-dán, đóng gói hộp phẳng và ô hoàn thiện khác.*
   * *Đơn vị*: Phút
   * *Mã*: BBCTFINISH
   * *Kí hiệu*: {{< katex >}}T_{finish}{{< /katex >}}

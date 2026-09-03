@@ -133,5 +133,11 @@ Dưới đây là những tham số liên quan tới thiết lập thời gian m
   * *Mã*: BBCIPACKWORKERS
   * *Kí hiệu*: {{< katex >}}n_b{{< /katex >}}
 
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho các khâu hoàn thiện chưa được mô hình hoá (cán màng, phủ UV, ép nhũ, dán cửa sổ, dán tay...).*
+  * *Đơn vị*: Phút
+  * *Mã*: BBCIOTHER
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+
 
 

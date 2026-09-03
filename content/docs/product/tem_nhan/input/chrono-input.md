@@ -37,5 +37,35 @@ Dưới đây là những tham số liên quan tới thiết lập thời gian m
   * *Mã*: TCISLITSPEED
   * *Kí hiệu*: {{< katex >}}v_s{{< /katex >}}
 
+- **Tốc độ planning cán màng tem**
+  * *Tốc độ web planning của cụm cán màng cuộn.*
+  * *Đơn vị*: m/Phút
+  * *Mã*: TCILAMSPEED
+  * *Kí hiệu*: {{< katex >}}v_l{{< /katex >}}
+
+- **Thời gian setup cán màng tem**
+  * *Lắp cuộn màng, canh sức căng, nhiệt và áp lực lô ép.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCILAMSETUP
+  * *Kí hiệu*: {{< katex >}}T_{l,setup}{{< /katex >}}
+
+- **Tốc độ planning ép nhũ**
+  * *Tốc độ web planning của cụm ép nhũ, đã trừ hao dừng thay cuộn nhũ.*
+  * *Đơn vị*: m/Phút
+  * *Mã*: TCIFOILSPEED
+  * *Kí hiệu*: {{< katex >}}v_f{{< /katex >}}
+
+- **Thời gian setup ép nhũ**
+  * *Lắp khuôn nhũ, cuộn nhũ, canh nhiệt, áp lực và register.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCIFOILSETUP
+  * *Kí hiệu*: {{< katex >}}T_{f,setup}{{< /katex >}}
+
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho các khâu hoàn thiện chưa được mô hình hoá (phủ varnish offline, embossing, in lụa, đánh số, đục lỗ, đóng gói cuộn).*
+  * *Đơn vị*: Phút
+  * *Mã*: TCIOTHER
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+
 
 

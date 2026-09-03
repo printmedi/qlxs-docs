@@ -24,7 +24,7 @@ Những tham số dưới đây là các đơn giá hoặc hằng số. Khác v�
   * *Mã*: BBSTAINKPRICE
   * *Kí hiệu*: {{< katex >}}P_i{{< /katex >}}
 - **Đơn giá một bản offset**
-  * *Giá chế một bản kẽm theo khổ candidate.*
+  * *Giá chế một bản kẽm theo khổ tờ in được chọn.*
   * *Đơn vị*: VNĐ/Bản
   * *Mã*: BBSTAPLATEPRICE
   * *Kí hiệu*: {{< katex >}}P_p{{< /katex >}}
@@ -37,7 +37,7 @@ Những tham số dưới đây là các đơn giá hoặc hằng số. Khác v�
 **Chi phí giờ máy in và chi phí đơn hàng**
 
 - **Đơn giá giờ máy in offset**
-  * *Chi phí planning mỗi giờ chiếm dụng máy in.*
+  * *Chi phí cho mỗi giờ sử dụng máy in.*
   * *Đơn vị*: VNĐ/Giờ
   * *Mã*: BBSTAPRESSHOUR
   * *Kí hiệu*: {{< katex >}}P_m{{< /katex >}}
@@ -60,12 +60,12 @@ Những tham số dưới đây là các đơn giá hoặc hằng số. Khác v�
   * *Mã*: BBSTARUNLOSS
   * *Kí hiệu*: {{< katex >}}w_r{{< /katex >}}
 - **Số tờ căn chỉnh máy in hộp**
-  * *Tờ setup cố định cho lên màu và register.*
+  * *Số tờ dùng để căn chỉnh màu và độ chồng khít trước khi in chính thức.*
   * *Đơn vị*: Tờ
   * *Mã*: BBSTASETUPSHEETS
   * *Kí hiệu*: {{< katex >}}N_{setup}{{< /katex >}}
 - **Độ rộng tai dán**
-  * *Tai dán dọc của profile hộp; engine dùng để dựng polygon.*
+  * *Chiều rộng phần mép dùng để bôi keo và dán thân hộp.*
   * *Đơn vị*: mm
   * *Mã*: BBSTAGLUEFLAP
   * *Kí hiệu*: {{< katex >}}g{{< /katex >}}
@@ -85,17 +85,17 @@ Những tham số dưới đây là các đơn giá hoặc hằng số. Khác v�
   * *Mã*: BBSTAFLAPGAP
   * *Kí hiệu*: {{< katex >}}e{{< /katex >}}
 - **Hệ số bù đường cấn theo độ dày**
-  * *Engine nhân caliper theo hệ số này khi dựng panel; đặt 0 để không bù.*
+  * *Bù thêm kích thước theo độ dày giấy khi dựng các mặt hộp; đặt 0 nếu không cần bù.*
   * *Đơn vị*: Hệ số
   * *Mã*: BBSTACREASECOMP
   * *Kí hiệu*: {{< katex >}}k_t{{< /katex >}}
 - **Khoảng cách giữa hai khuôn hộp**
-  * *Khoảng trống tối thiểu u-nesting giữ giữa hai polygon.*
+  * *Khoảng trống tối thiểu phải giữ giữa hai khuôn hộp khi xếp trên cùng một tờ.*
   * *Đơn vị*: mm
   * *Mã*: BBSTANESTGAP
   * *Kí hiệu*: {{< katex >}}d{{< /katex >}}
 - **Lề an toàn tờ in**
-  * *Lề bảo thủ dùng chung quanh tờ, không phải bốn field lề máy riêng.*
+  * *Khoảng trống tối thiểu giữ quanh mép tờ in khi xếp khuôn hộp.*
   * *Đơn vị*: mm
   * *Mã*: BBSTASAFEMARGIN
   * *Kí hiệu*: {{< katex >}}m{{< /katex >}}

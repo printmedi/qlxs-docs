@@ -3,7 +3,7 @@ bookFlatSection: true
 weight: 1
 type: docs
 title: Đơn tem cuộn flexo production tham chiếu
-url: /tem_nhan/tem_nhan_cuon_flexo/SAMP.PC_02001.uW8UZxilTw
+url: /tem_nhan/tem_nhan_cuon_flexo/SAMP.PC_02001.tsAEkziMBt
 ---
 
 
@@ -87,6 +87,12 @@ Candidate 350 mm × repeat 258 mm, 5 tem ngang và 6 tem quanh repeat.
 * Số tem tối đa mỗi cuộn thành phẩm - {{< katex >}}q_{roll}{{< /katex >}}: 2,000 Tem/Cuộn
 
 
+* Có cán màng tem - {{< katex >}}b_l{{< /katex >}}: 1 Có/Không
+
+
+* Có ép nhũ tem - {{< katex >}}b_f{{< /katex >}}: 0 Có/Không
+
+
 * Khổ web tối đa của máy - {{< katex >}}W_{max}{{< /katex >}}: 350 mm
 
 
@@ -118,6 +124,21 @@ Candidate 350 mm × repeat 258 mm, 5 tem ngang và 6 tem quanh repeat.
 
 
 * Tốc độ planning chia cuộn - {{< katex >}}v_s{{< /katex >}}: 200 m/Phút
+
+
+* Tốc độ planning cán màng tem - {{< katex >}}v_l{{< /katex >}}: 100 m/Phút
+
+
+* Thời gian setup cán màng tem - {{< katex >}}T_{l,setup}{{< /katex >}}: 20 Phút
+
+
+* Tốc độ planning ép nhũ - {{< katex >}}v_f{{< /katex >}}: 60 m/Phút
+
+
+* Thời gian setup ép nhũ - {{< katex >}}T_{f,setup}{{< /katex >}}: 45 Phút
+
+
+* Thời gian hoàn thiện khác - {{< katex >}}T_{other}{{< /katex >}}: 0 Phút
 
 
 
@@ -213,10 +234,19 @@ Candidate 350 mm × repeat 258 mm, 5 tem ngang và 6 tem quanh repeat.
 * Chia cuộn tem - {{< katex >}}T_s{{< /katex >}}: 15 Phút
 
 
-* Tổng thời gian hoàn thiện - {{< katex >}}T_{finish}{{< /katex >}}: 15 Phút
+* Cán màng tem - {{< katex >}}T_l{{< /katex >}}: 30 Phút
 
 
-* Tổng thời gian sản xuất - {{< katex >}}T_{total}{{< /katex >}}: 53 Phút
+* Ép nhũ tem - {{< katex >}}T_f{{< /katex >}}: 0 Phút
+
+
+* Thời gian hoàn thiện khác - {{< katex >}}T_{other}{{< /katex >}}: 0 Phút
+
+
+* Tổng thời gian hoàn thiện - {{< katex >}}T_{finish}{{< /katex >}}: 45 Phút
+
+
+* Tổng thời gian sản xuất - {{< katex >}}T_{total}{{< /katex >}}: 83 Phút
 
 
 

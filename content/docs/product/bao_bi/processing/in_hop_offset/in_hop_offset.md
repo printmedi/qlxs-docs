@@ -415,17 +415,28 @@ in offset, bế/cấn/tách phế, gấp-dán và đóng gói hộp phẳng.
 {{< katex >}}n_b{{< /katex >}}: Nhân công đóng gói hộp (Người)<br>
 
   {{< /details >}}
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho khâu hoàn thiện chưa mô hình hoá. Không suy diễn, chỉ lấy đúng số người dùng nhập.*
+  * *Đơn vị*: Phút
+  * *Mã*: BBCTOTHR
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+  * *Công thức* :{{< katex >}}T_{other}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}T_{other}{{< /katex >}}: Thời gian hoàn thiện khác (Phút)<br>
+
+  {{< /details >}}
 - **Tổng thời gian hoàn thiện**
-  * *Pha cắt tờ, bế/cấn/tách phế, gấp-dán và đóng gói hộp phẳng.*
+  * *Pha cắt tờ, bế/cấn/tách phế, gấp-dán, đóng gói hộp phẳng và ô hoàn thiện khác.*
   * *Đơn vị*: Phút
   * *Mã*: BBCTFINISH
   * *Kí hiệu*: {{< katex >}}T_{finish}{{< /katex >}}
-  * *Công thức* :{{< katex >}}T_c + T_d + T_g + T_b{{< /katex >}}
+  * *Công thức* :{{< katex >}}T_c + T_d + T_g + T_b + T_{other}{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}T_c{{< /katex >}}: Pha cắt tờ hộp (Phút)<br>
 {{< katex >}}T_d{{< /katex >}}: Bế, cấn và tách phế hộp (Phút)<br>
 {{< katex >}}T_g{{< /katex >}}: Gấp và dán hộp (Phút)<br>
 {{< katex >}}T_b{{< /katex >}}: Đóng gói hộp phẳng (Phút)<br>
+{{< katex >}}T_{other}{{< /katex >}}: Thời gian hoàn thiện khác (Phút)<br>
 
   {{< /details >}}
 - **Tổng thời gian sản xuất**

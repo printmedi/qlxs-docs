@@ -174,6 +174,9 @@ Hộp 60 × 40 × 120 mm, candidate 4 hộp trên tờ 54 × 79 cm.
 * Nhân công đóng gói hộp - {{< katex >}}n_b{{< /katex >}}: 2 Người
 
 
+* Thời gian hoàn thiện khác - {{< katex >}}T_{other}{{< /katex >}}: 0 Phút
+
+
 
 
 ## TÍNH TOÁN NGUYÊN VẬT LIỆU
@@ -222,12 +225,6 @@ Hộp 60 × 40 × 120 mm, candidate 4 hộp trên tờ 54 × 79 cm.
 * Tờ hộp vừa máy bế - {{< katex >}}V_d{{< /katex >}}: 1 Boolean
 
 
-* Chi phí giấy hộp - {{< katex >}}C_s{{< /katex >}}: 8,514,332 VNĐ
-
-
-* Chi phí mực hộp - {{< katex >}}C_i{{< /katex >}}: 608,720 VNĐ
-
-
 * Chi phí bản offset - {{< katex >}}C_p{{< /katex >}}: 480,000 VNĐ
 
 
@@ -271,6 +268,9 @@ Hộp 60 × 40 × 120 mm, candidate 4 hộp trên tờ 54 × 79 cm.
 
 
 * Đóng gói hộp phẳng - {{< katex >}}T_b{{< /katex >}}: 2 Giờ 40 Phút
+
+
+* Thời gian hoàn thiện khác - {{< katex >}}T_{other}{{< /katex >}}: 0 Phút
 
 
 * Tổng thời gian hoàn thiện - {{< katex >}}T_{finish}{{< /katex >}}: 3 Giờ 25 Phút

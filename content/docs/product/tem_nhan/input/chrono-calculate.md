@@ -43,8 +43,26 @@ Dưới đây là những kết quả tính toán liên quan tới giá trị th
   * *Mã*: TCCSLIT
   * *Kí hiệu*: {{< katex >}}T_s{{< /katex >}}
 
+- **Cán màng tem**
+  * *Cán màng bảo vệ trên web tem. Bằng 0 khi đơn không cán màng.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCLAM
+  * *Kí hiệu*: {{< katex >}}T_l{{< /katex >}}
+
+- **Ép nhũ tem**
+  * *Ép nhũ trên web tem, không phân biệt nhũ nóng hay nhũ lạnh. Bằng 0 khi đơn không ép nhũ.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCFOIL
+  * *Kí hiệu*: {{< katex >}}T_f{{< /katex >}}
+
+- **Thời gian hoàn thiện khác**
+  * *Ô nhập tay cho khâu hoàn thiện chưa mô hình hoá. Không suy diễn, chỉ lấy đúng số người dùng nhập.*
+  * *Đơn vị*: Phút
+  * *Mã*: TCCOTHR
+  * *Kí hiệu*: {{< katex >}}T_{other}{{< /katex >}}
+
 - **Tổng thời gian hoàn thiện**
-  * *Tổng stage hoàn thiện được processing bật.*
+  * *Tổng các stage hoàn thiện được processing bật — chia cuộn, cán màng, ép nhũ và ô nhập tay.*
   * *Đơn vị*: Phút
   * *Mã*: TCCTCOMP
   * *Kí hiệu*: {{< katex >}}T_{finish}{{< /katex >}}
