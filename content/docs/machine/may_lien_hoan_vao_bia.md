@@ -8,15 +8,17 @@ url: /machine/may_lien_hoan_vao_bia/
 
 # Máy Liên Hoàn Vào Bìa
 
-Máy Kỵ Mã được sử dụng để đóng các tập sách, tạp chí hoặc tài liệu in khác bằng cách sử dụng ghim kim loại.
+Dây chuyền đóng cuốn/vào bìa tích hợp. Mapping theo processing xác định stage hiệu lực;
+không mặc định máy này là máy đóng ghim và không cộng lặp nhiều stage cho cùng một lượt chạy.
+
 
 # Thông Số
 
-- **Thời gian chuẩn bị máy kỵ mã**
-  * *Định mức thời gian chuẩn bị máy kỹ mã*
+- **Thời gian chuẩn bị dây chuyền vào bìa**
+  * *Định mức setup/đổi job của dây chuyền vào bìa hoặc đóng cuốn keo.*
   * *Đơn vị*: Phút
 
-- **Tốc độ hoàn thành công việc kỵ mã**
+- **Tốc độ dây chuyền vào bìa**
   * *Tốc độ máy liên hoàn vào bìa*
   * *Đơn vị*: Cuốn/Giờ
 

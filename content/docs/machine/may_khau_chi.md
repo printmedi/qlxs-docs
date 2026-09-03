@@ -17,8 +17,8 @@ Máy khâu chỉ là thiết bị được sử dụng để đóng gáy các t�
   * *Đơn vị*: Phút
 
 - **Tốc độ hoàn thành công việc khâu chỉ**
-  * *Tốc độ làm việc*
-  * *Đơn vị*: Lần/Giờ
+  * *Planning speed theo số chu kỳ khâu một tay sách trong một giờ.*
+  * *Đơn vị*: Chu kỳ tay sách/Giờ
 
 
 

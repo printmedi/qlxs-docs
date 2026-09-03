@@ -38,7 +38,7 @@ Dưới đây là những tham số liên quan tới thiết lập thời gian m
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}No_{img}{{< /katex >}}
 
 - **Năng lực xử lý dàn trang**
-  * *Năng lực xử lý dàn trang (Layout) trung bình.*
+  * *Thời gian planning trung bình để dàn một trang; giá trị càng nhỏ thì trạm xử lý càng nhanh.*
   * *Đơn vị*: Phút/Trang
   * *Mã*: CHRNLDT
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Det_{layout}{{< /katex >}}

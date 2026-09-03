@@ -2,17 +2,17 @@
 weight: 1
 type: docs
 title: Công Thức
-url: /sach/sach_dong_ghim
+url: /sach/khong_khau_bia_keo_nhiet
 ---
 
-# Đóng ghim giữa gáy
+# Không khâu bìa keo nhiệt
 
-Sách/brochure offset tờ rời được gấp thành tay, lồng trên xích gom, cấp bìa,
-đóng ghim dây qua đường gấp giữa và xén trên dây chuyền saddle stitch.
-Model tính giấy, bản, mực, thời gian dây chuyền, creep hình học, lượng dây ghim,
-chi phí và các giới hạn độ dày/khổ/feeder/đầu ghim. Công thức, cân bằng dây và
-giới hạn mẫu đã được đối chiếu tài liệu hãng và test số; recipe, hao hụt và
-năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà máy.
+Sách bìa mềm không khâu (perfect binding): ruột offset tờ rời được gấp, bắt tay,
+phay/xử lý gáy, bôi keo gáy, bôi keo hông, vào bìa và xén ba mặt.
+Hai profile EVA/PUR dùng chung phần giấy, bản, mực và dây chuyền; chỉ override
+tham số phụ thuộc hệ keo. Công thức offset, hình học và khối lượng keo đã được
+đối chiếu nguồn hãng và test số. Recipe, hao hụt, tốc độ và giá vẫn phải hiệu
+chuẩn theo TDS/SOP cùng dữ liệu thực tế của nhà máy.
 
 
 # Thông Tin Tính Toán
@@ -281,10 +281,11 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
   * *Đơn vị*: cm
   * *Mã*: MATGS
   * *Kí hiệu*: {{< katex >}}s{{< /katex >}}
-  * *Công thức* :{{< katex >}}p_{prod} / 2 * t_t * 0.0001{{< /katex >}}
+  * *Công thức* :{{< katex >}}p_{prod} / 2 * t_t * 0.0001 * k_s{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}p_{prod}{{< /katex >}}: Số trang ruột sản xuất (Trang)<br>
 {{< katex >}}t_t{{< /katex >}}: Caliper giấy ruột (µm)<br>
+{{< katex >}}k_s{{< /katex >}}: Hệ số hiệu chỉnh gáy sau khâu và ép (Hệ số)<br>
 
   {{< /details >}}
 - **Khổ bình bìa yêu cầu - dài**
@@ -293,10 +294,11 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
   * *Mã*: MATKIBD
   * *Kí hiệu*: {{< katex >}}L_c{{< /katex >}}
   * *Công thức* :
-	* Nếu {{< katex >}}i_c{{< /katex >}} bằng [•  4  	]: {{< katex >}}\lceil{((2 * w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{(2 * (2 * w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Nếu {{< katex >}}i_c{{< /katex >}} bằng [•  4  	]: {{< katex >}}\lceil{((2 * w + s + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(2 * (2 * w + s + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}w{{< /katex >}}: Chiều rộng thành phẩm (cm)<br>
+{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
 {{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
 {{< katex >}}g{{< /katex >}}: Khoảng chừa nhíp (cm)<br>
 {{< katex >}}c{{< /katex >}}: Khoảng thang màu (cm)<br>
@@ -324,10 +326,11 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
   * *Mã*: MATKIRD
   * *Kí hiệu*: {{< katex >}}L_t{{< /katex >}}
   * *Công thức* :
-	* Nếu {{< katex >}}i_t{{< /katex >}} bằng [•  8  	]: {{< katex >}}\lceil{(2 * (w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{(4 * (w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Nếu {{< katex >}}i_t{{< /katex >}} bằng [•  8  	]: {{< katex >}}\lceil{(2 * (w + d_{mill} + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(4 * (w + d_{mill} + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}w{{< /katex >}}: Chiều rộng thành phẩm (cm)<br>
+{{< katex >}}d_{mill}{{< /katex >}}: Chiều sâu phay gáy (cm)<br>
 {{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
 {{< katex >}}g{{< /katex >}}: Khoảng chừa nhíp (cm)<br>
 {{< katex >}}c{{< /katex >}}: Khoảng thang màu (cm)<br>
@@ -414,11 +417,12 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
   * *Mã*: MATVALIDS
   * *Kí hiệu*: {{< katex >}}V_s{{< /katex >}}
   * *Công thức* :
-	* Nếu {{< katex >}}t_{book}{{< /katex >}} thỏa mãn {{< katex >}}(t_{book} <= t_{book,max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Nếu {{< katex >}}s{{< /katex >}} thỏa mãn {{< katex >}}(s * 10 >= s_{min} && s * 10 <= s_{max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
 	* Ngoài ra: {{< katex >}}0{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}t_{book}{{< /katex >}}: Tổng độ dày cuốn đóng ghim (mm)<br>
-{{< katex >}}t_{book,max}{{< /katex >}}: Độ dày cuốn đóng ghim tối đa (mm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
+{{< katex >}}s_{min}{{< /katex >}}: Độ dày đóng cuốn tối thiểu (mm)<br>
+{{< katex >}}s_{max}{{< /katex >}}: Độ dày đóng cuốn tối đa (mm)<br>
 
   {{< /details >}}
 - **Khối lượng giấy bìa**
@@ -598,13 +602,13 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCGC
   * *Kí hiệu*: {{< katex >}}C_{finish}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{Q_g * n_s * C_{signature} + Q_g * C_{book} + C_{wire}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{Q_g * n_s * C_{signature} + Q_g * C_{book} + C_{glue}}\rceil{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
 {{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
 {{< katex >}}C_{signature}{{< /katex >}}: Chi phí hoàn thiện mỗi tay sách (VNĐ/Tay)<br>
 {{< katex >}}C_{book}{{< /katex >}}: Chi phí hoàn thiện mỗi cuốn (VNĐ/Cuốn)<br>
-{{< katex >}}C_{wire}{{< /katex >}}: Chi phí dây ghim (VNĐ)<br>
+{{< katex >}}C_{glue}{{< /katex >}}: Chi phí vật tư keo đóng cuốn (VNĐ)<br>
 
   {{< /details >}}
 - **Chi phí đơn hàng**
@@ -635,140 +639,92 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
 {{< katex >}}Q{{< /katex >}}: Số lượng thành phẩm (Cuốn)<br>
 
   {{< /details >}}
-- **Tổng độ dày cuốn đóng ghim**
-  * *Độ dày khối ruột đóng cộng hai lớp bìa của cuốn thành phẩm.*
-  * *Đơn vị*: mm
-  * *Mã*: MATSTITCHBOOKTHICK
-  * *Kí hiệu*: {{< katex >}}t_{book}{{< /katex >}}
-  * *Công thức* :{{< katex >}}s * 10 + 2 * t_c * 0.001{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
-{{< katex >}}t_c{{< /katex >}}: Caliper giấy bìa (µm)<br>
-
-  {{< /details >}}
-- **Creep hình học lớn nhất**
-  * *Dịch chuyển hình học xấp xỉ của tay trong cùng do các lớp giấy lồng; prepress dùng làm đầu vào bù creep và phải duyệt lại theo dummy gấp/xén.*
-  * *Đơn vị*: mm
-  * *Mã*: MATSTITCHCREEP
-  * *Kí hiệu*: {{< katex >}}c_{max}{{< /katex >}}
-  * *Công thức* :{{< katex >}}s * 5 + t_c * 0.001{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
-{{< katex >}}t_c{{< /katex >}}: Caliper giấy bìa (µm)<br>
-
-  {{< /details >}}
-- **Tổng số ghim cần tạo**
-  * *Sản lượng gộp nhân số ghim trên mỗi cuốn.*
-  * *Đơn vị*: Ghim
-  * *Mã*: MATSTITCHTOTAL
-  * *Kí hiệu*: {{< katex >}}N_{stitch}{{< /katex >}}
-  * *Công thức* :{{< katex >}}Q_g * n_{stitch}{{< /katex >}}
+- **Diện tích gáy phủ keo**
+  * *Tổng diện tích mặt gáy của sản lượng gộp, dùng chiều cao thành phẩm và độ dày khối ruột.*
+  * *Đơn vị*: m²
+  * *Mã*: MATGLUEAREA
+  * *Kí hiệu*: {{< katex >}}A_{spine}{{< /katex >}}
+  * *Công thức* :{{< katex >}}Q_g * (h + 2 * a_{trim}) * s * 0.0001{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
-{{< katex >}}n_{stitch}{{< /katex >}}: Số ghim mỗi cuốn (Ghim/Cuốn)<br>
-
-  {{< /details >}}
-- **Tổng chiều dài dây ghim tiêu thụ**
-  * *Chiều dài dây theo recipe trên tổng số ghim, đã bù hao hụt dây riêng.*
-  * *Đơn vị*: m
-  * *Mã*: MATSTITCHWIRELEN
-  * *Kí hiệu*: {{< katex >}}L_{wire}{{< /katex >}}
-  * *Công thức* :{{< katex >}}N_{stitch} * l_{wire} * 0.001 / (1 - w_{wire}){{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}N_{stitch}{{< /katex >}}: Tổng số ghim cần tạo (Ghim)<br>
-{{< katex >}}l_{wire}{{< /katex >}}: Chiều dài dây cho mỗi ghim (mm/Ghim)<br>
-{{< katex >}}w_{wire}{{< /katex >}}: Tỷ lệ hao hụt dây ghim (Hệ số)<br>
-
-  {{< /details >}}
-- **Khối lượng dây ghim tiêu thụ**
-  * *Chiều dài dây nhân khối lượng trên mét của đúng spool/lô vật tư.*
-  * *Đơn vị*: kg
-  * *Mã*: MATSTITCHWIREKG
-  * *Kí hiệu*: {{< katex >}}M_{wire}{{< /katex >}}
-  * *Công thức* :{{< katex >}}L_{wire} * m_{wire/m} * 0.001{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}L_{wire}{{< /katex >}}: Tổng chiều dài dây ghim tiêu thụ (m)<br>
-{{< katex >}}m_{wire/m}{{< /katex >}}: Khối lượng dây ghim trên mét (g/m)<br>
-
-  {{< /details >}}
-- **Chi phí dây ghim**
-  * *Khối lượng dây ghim nhân đơn giá mua thực tế.*
-  * *Đơn vị*: VNĐ
-  * *Mã*: MATSTITCHWIRECOST
-  * *Kí hiệu*: {{< katex >}}C_{wire}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{M_{wire} * c_{wire}}\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}M_{wire}{{< /katex >}}: Khối lượng dây ghim tiêu thụ (kg)<br>
-{{< katex >}}c_{wire}{{< /katex >}}: Đơn giá dây ghim (VNĐ/kg)<br>
-
-  {{< /details >}}
-- **Tổng trang sản xuất hợp lệ cho đóng ghim**
-  * *1 nếu tổng trang ruột đã bù cộng bìa là bội số của 4.*
-  * *Đơn vị*: Boolean
-  * *Mã*: MATSTITCHPAGEVALID
-  * *Kí hiệu*: {{< katex >}}V_{page}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}p_{prod}{{< /katex >}} thỏa mãn {{< katex >}}(\lceil{(p_{prod} + p_c) / 4}\rceil * 4 == (p_{prod} + p_c)){{< /katex >}}: {{< katex >}}1{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}p_{prod}{{< /katex >}}: Số trang ruột sản xuất (Trang)<br>
-{{< katex >}}p_c{{< /katex >}}: Số trang bìa (Trang)<br>
-
-  {{< /details >}}
-- **Độ dày cuốn trong giới hạn máy đóng ghim**
-  * *1 nếu tổng độ dày cuốn không vượt giới hạn dây chuyền đã khai báo.*
-  * *Đơn vị*: Boolean
-  * *Mã*: MATSTITCHTHICKVALID
-  * *Kí hiệu*: {{< katex >}}V_{thickness}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}t_{book}{{< /katex >}} thỏa mãn {{< katex >}}(t_{book} <= t_{book,max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}t_{book}{{< /katex >}}: Tổng độ dày cuốn đóng ghim (mm)<br>
-{{< katex >}}t_{book,max}{{< /katex >}}: Độ dày cuốn đóng ghim tối đa (mm)<br>
-
-  {{< /details >}}
-- **Số tay trong giới hạn trạm cấp**
-  * *1 nếu số tay ruột không vượt số feeder khả dụng của cấu hình máy.*
-  * *Đơn vị*: Boolean
-  * *Mã*: MATSTITCHFEEDVALID
-  * *Kí hiệu*: {{< katex >}}V_{feeder}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}n_s{{< /katex >}} thỏa mãn {{< katex >}}(n_s <= n_{feeder,max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
-{{< katex >}}n_{feeder,max}{{< /katex >}}: Số trạm cấp tay tối đa (Trạm)<br>
-
-  {{< /details >}}
-- **Số ghim trong giới hạn đầu ghim**
-  * *1 nếu số ghim yêu cầu không vượt số đầu ghim khả dụng.*
-  * *Đơn vị*: Boolean
-  * *Mã*: MATSTITCHHEADVALID
-  * *Kí hiệu*: {{< katex >}}V_{head}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}n_{stitch}{{< /katex >}} thỏa mãn {{< katex >}}(n_{stitch} <= n_{head,max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}n_{stitch}{{< /katex >}}: Số ghim mỗi cuốn (Ghim/Cuốn)<br>
-{{< katex >}}n_{head,max}{{< /katex >}}: Số đầu ghim khả dụng tối đa (Đầu ghim)<br>
-
-  {{< /details >}}
-- **Thành phẩm trong giới hạn khổ máy đóng ghim**
-  * *1 nếu khổ thành phẩm nằm trong khoảng min/max đã khai báo, cho phép xoay hướng.*
-  * *Đơn vị*: Boolean
-  * *Mã*: MATSTITCHFORMATVALID
-  * *Kí hiệu*: {{< katex >}}V_{format}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}w{{< /katex >}} thỏa mãn {{< katex >}}((w >= W_{stitch,min} && w <= W_{stitch,max} && h >= H_{stitch,min} && h <= H_{stitch,max}) || (h >= W_{stitch,min} && h <= W_{stitch,max} && w >= H_{stitch,min} && w <= H_{stitch,max})){{< /katex >}}: {{< katex >}}1{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}w{{< /katex >}}: Chiều rộng thành phẩm (cm)<br>
-{{< katex >}}W_{stitch,min}{{< /katex >}}: Khổ thành phẩm đóng ghim - rộng tối thiểu (cm)<br>
-{{< katex >}}W_{stitch,max}{{< /katex >}}: Khổ thành phẩm đóng ghim - rộng tối đa (cm)<br>
 {{< katex >}}h{{< /katex >}}: Chiều dài thành phẩm (cm)<br>
-{{< katex >}}H_{stitch,min}{{< /katex >}}: Khổ thành phẩm đóng ghim - dài tối thiểu (cm)<br>
-{{< katex >}}H_{stitch,max}{{< /katex >}}: Khổ thành phẩm đóng ghim - dài tối đa (cm)<br>
+{{< katex >}}a_{trim}{{< /katex >}}: Lượng dư xén đầu/chân mỗi đầu (cm)<br>
+{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
+
+  {{< /details >}}
+- **Khối lượng keo gáy tiêu thụ**
+  * *Diện tích gáy nhân độ dày màng và khối lượng riêng, bù hao hụt hệ keo gáy.*
+  * *Đơn vị*: kg
+  * *Mã*: MATGLUESPKG
+  * *Kí hiệu*: {{< katex >}}M_{glue,spine}{{< /katex >}}
+  * *Công thức* :{{< katex >}}A_{spine} * t_{glue} * rho_{glue} / (1 - w_{glue,spine}){{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}A_{spine}{{< /katex >}}: Diện tích gáy phủ keo (m²)<br>
+{{< katex >}}t_{glue}{{< /katex >}}: Độ dày màng keo gáy (mm)<br>
+{{< katex >}}rho_{glue}{{< /katex >}}: Khối lượng riêng keo gáy (g/cm³)<br>
+{{< katex >}}w_{glue,spine}{{< /katex >}}: Tỷ lệ hao hụt keo gáy (Hệ số)<br>
+
+  {{< /details >}}
+- **Khối lượng keo hông EVA tiêu thụ**
+  * *Hai đường keo hông theo chiều cao gáy, bù hao hụt riêng của hệ keo hông.*
+  * *Đơn vị*: kg
+  * *Mã*: MATGLUESIKG
+  * *Kí hiệu*: {{< katex >}}M_{glue,side}{{< /katex >}}
+  * *Công thức* :{{< katex >}}Q_g * 2 * (h + 2 * a_{trim}) * m_{side} * 0.00001 / (1 - w_{glue,side}){{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
+{{< katex >}}h{{< /katex >}}: Chiều dài thành phẩm (cm)<br>
+{{< katex >}}a_{trim}{{< /katex >}}: Lượng dư xén đầu/chân mỗi đầu (cm)<br>
+{{< katex >}}m_{side}{{< /katex >}}: Định mức keo hông EVA theo chiều dài (g/m)<br>
+{{< katex >}}w_{glue,side}{{< /katex >}}: Tỷ lệ hao hụt keo hông (Hệ số)<br>
+
+  {{< /details >}}
+- **Tổng khối lượng keo đóng cuốn**
+  * *Tổng keo gáy theo profile và keo hông EVA.*
+  * *Đơn vị*: kg
+  * *Mã*: MATGLUETOT
+  * *Kí hiệu*: {{< katex >}}M_{glue}{{< /katex >}}
+  * *Công thức* :{{< katex >}}M_{glue,spine} + M_{glue,side}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}M_{glue,spine}{{< /katex >}}: Khối lượng keo gáy tiêu thụ (kg)<br>
+{{< katex >}}M_{glue,side}{{< /katex >}}: Khối lượng keo hông EVA tiêu thụ (kg)<br>
+
+  {{< /details >}}
+- **Chi phí vật tư keo đóng cuốn**
+  * *Keo gáy và keo hông nhân đơn giá mua thực tế tương ứng.*
+  * *Đơn vị*: VNĐ
+  * *Mã*: MATGLUECOST
+  * *Kí hiệu*: {{< katex >}}C_{glue}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{M_{glue,spine} * c_{glue,spine} + M_{glue,side} * c_{glue,side}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}M_{glue,spine}{{< /katex >}}: Khối lượng keo gáy tiêu thụ (kg)<br>
+{{< katex >}}c_{glue,spine}{{< /katex >}}: Đơn giá keo gáy (VNĐ/kg)<br>
+{{< katex >}}M_{glue,side}{{< /katex >}}: Khối lượng keo hông EVA tiêu thụ (kg)<br>
+{{< katex >}}c_{glue,side}{{< /katex >}}: Đơn giá keo hông EVA (VNĐ/kg)<br>
+
+  {{< /details >}}
+- **Độ dày màng keo trong giới hạn recipe**
+  * *1 nếu độ dày màng keo nằm trong giới hạn TDS/recipe máy đã khai báo.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATGLUEVALID
+  * *Kí hiệu*: {{< katex >}}V_{glue}{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}t_{glue}{{< /katex >}} thỏa mãn {{< katex >}}(t_{glue} >= t_{glue,min} && t_{glue} <= t_{glue,max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}t_{glue}{{< /katex >}}: Độ dày màng keo gáy (mm)<br>
+{{< katex >}}t_{glue,min}{{< /katex >}}: Độ dày keo gáy tối thiểu theo recipe (mm)<br>
+{{< katex >}}t_{glue,max}{{< /katex >}}: Độ dày keo gáy tối đa theo recipe (mm)<br>
+
+  {{< /details >}}
+- **Thời gian chờ QC keo ngoài máy**
+  * *Mốc chờ QC/release theo profile; không cộng vào thời gian chiếm dụng máy hoặc tổng thời gian sản xuất.*
+  * *Đơn vị*: Giờ
+  * *Mã*: MATGLUEQCH
+  * *Kí hiệu*: {{< katex >}}T_{qc}{{< /katex >}}
+  * *Công thức* :{{< katex >}}t_{qc}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}t_{qc}{{< /katex >}}: Thời gian chờ đạt điều kiện QC keo (Giờ)<br>
 
   {{< /details >}}
 ### Tính Toán Thời Gian
@@ -1021,16 +977,16 @@ năng suất vẫn phải hiệu chuẩn theo máy, spool và dữ liệu nhà m
 {{< katex >}}\mathcal{C}\mathscr{i}Prep_{Collating}{{< /katex >}}: Thời gian chuẩn bị bắt tay sách (Phút)<br>
 
   {{< /details >}}
-- **Đóng ghim**
-  * *Công thức tính thời gian đóng ghim*
+- **Vào keo**
+  * *Thời gian vào keo*
   * *Đơn vị*: Phút
-  * *Mã*: CHRTGH
-  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Stapling{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(Q_g * 60) / \mathcal{C}\mathscr{i}Det_{StapleMachineSpd} + \mathcal{C}\mathscr{i}Det_{StapleMachinePrep}}\rceil{{< /katex >}}
+  * *Mã*: CHRTGVK
+  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Glue{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(Q_g * 60) / \mathcal{C}\mathscr{i}Det_{Glue} + \mathcal{C}\mathscr{i}Prep_{Glue}}\rceil{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{StapleMachineSpd}{{< /katex >}}: Tốc độ dây chuyền đóng ghim (Cuốn/Giờ)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{StapleMachinePrep}{{< /katex >}}: Thời gian chuẩn bị máy đóng ghim (Phút)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Det_{Glue}{{< /katex >}}: Tốc độ dây chuyền đóng cuốn keo (Cuốn/Giờ)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Prep_{Glue}{{< /katex >}}: Thời gian setup và vệ sinh máy đóng cuốn keo (Phút)<br>
 
   {{< /details >}}
 - **Xén 3 mặt**

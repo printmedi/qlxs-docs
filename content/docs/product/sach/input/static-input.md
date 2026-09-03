@@ -13,76 +13,126 @@ Những tham số dưới đây là các đơn giá hoặc hằng số. Khác v�
 ## Đơn giá nguyên vật liệu
 **Giá thành nguyên vật liệu khác nhau**
 
-- **Đơn giá giấy**
-  * *Đơn giá giấy là giá bán của một tấn giấy in ấn. Giá này thay đổi tùy theo loại giấy, định lượng (khối lượng giấy trên một đơn vị diện tích), thương hiệu, nhà cung cấp và thời điểm mua.*
+- **Đơn giá giấy bìa**
+  * *Giá mua một tấn giấy bìa tại nhà máy.*
   * *Đơn vị*: VNĐ/Tấn
-  * *Mã*: MAPPAP
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}M_{paper}{{< /katex >}}
-- **Đơn giá bản in**
-  * *Đơn giá bản in (impression)*
-  * *Đơn vị*: VNĐ/CM²
-  * *Mã*: MAPIMP
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}M_{imp}{{< /katex >}}
-- **Đơn giá mực**
-  * *Đơn giá mực (Tính theo VNĐ/KG)*
-  * *Đơn vị*: VNĐ/KG
-  * *Mã*: MAPINK
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}M_{ink}{{< /katex >}}
-- **Đơn giá màng bìa**
-  * *Đơn giá màng bìa (film)*
+  * *Mã*: MAPPCOV
+  * *Kí hiệu*: {{< katex >}}P_{paper,cover}{{< /katex >}}
+- **Đơn giá giấy ruột**
+  * *Giá mua một tấn giấy ruột tại nhà máy.*
+  * *Đơn vị*: VNĐ/Tấn
+  * *Mã*: MAPPIN
+  * *Kí hiệu*: {{< katex >}}P_{paper,text}{{< /katex >}}
+- **Đơn giá bản offset**
+  * *Chi phí vật tư bản theo diện tích bản ghi.*
   * *Đơn vị*: VNĐ/cm²
+  * *Mã*: MAPPLATE
+  * *Kí hiệu*: {{< katex >}}P_{plate}{{< /katex >}}
+- **Đơn giá mực**
+  * *Giá mực offset theo khối lượng.*
+  * *Đơn vị*: VNĐ/kg
+  * *Mã*: MAPINK
+  * *Kí hiệu*: {{< katex >}}P_{ink}{{< /katex >}}
+- **Đơn giá màng bìa**
+  * *Giá màng cán theo diện tích.*
+  * *Đơn vị*: VNĐ/m²
   * *Mã*: MAPFLM
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}M_{film}{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}P_{film}{{< /katex >}}
+- **Định mức màng mực tại 100% phủ**
+  * *Khối lượng màng mực quy ước trên một m² tại 100% độ phủ.*
+  * *Đơn vị*: g/m²
+  * *Mã*: SHRINKFILM
+  * *Kí hiệu*: {{< katex >}}f_{ink}{{< /katex >}}
 ## Đơn giá công sản xuất
 **Giá thành cho từng hoạt động sản xuất**
 
-- **Đơn giá in - 1000 lượt đầu**
-  * *Đơn giá in ấn trong 1000 lượt đầu tiên*
-  * *Đơn vị*: VNĐ/1000 lượt
-  * *Mã*: SHRTMNLD
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}0_{in1000}{{< /katex >}}
-- **Đơn giá in - 1000 lượt sau**
-  * *Đơn giá in ấn sau 1000 lượt đầu tiên*
-  * *Đơn vị*: VNĐ/lượt
-  * *Mã*: SHRTMNLS
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}0_{after1000}{{< /katex >}}
-- **Đơn giá gia công sách**
-  * *Đơn giá gia công sách cho mỗi trang*
-  * *Đơn vị*: VNĐ/trang
-  * *Mã*: SHRGCS
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}0_{manufacture}{{< /katex >}}
-- **Đơn giá chế bản**
-  * *Đơn giá chế bản sách*
-  * *Đơn vị*: VNĐ/trang
-  * *Mã*: SHRCB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}0_{engraving}{{< /katex >}}
+- **Chi phí chế bản mỗi bản**
+  * *Chi phí dịch vụ chế bản trên mỗi bản offset.*
+  * *Đơn vị*: VNĐ/Bản
+  * *Mã*: SHRPREPRESS
+  * *Kí hiệu*: {{< katex >}}C_{prepress}{{< /katex >}}
+- **Chi phí setup mỗi khuôn-lượt**
+  * *Chi phí cố định cho một khuôn trên một lượt chạy máy.*
+  * *Đơn vị*: VNĐ
+  * *Mã*: SHRPRINTSET
+  * *Kí hiệu*: {{< katex >}}C_{setup}{{< /katex >}}
+- **Chi phí mỗi lượt tờ qua máy**
+  * *Chi phí biến đổi cho một tờ qua máy in trong một lượt.*
+  * *Đơn vị*: VNĐ/Lượt tờ
+  * *Mã*: SHRIMPR
+  * *Kí hiệu*: {{< katex >}}C_{impression}{{< /katex >}}
+- **Chi phí hoàn thiện mỗi tay sách**
+  * *Chi phí theo tay sách cho các công đoạn được processing bật; với không khâu không được gồm chi phí khâu.*
+  * *Đơn vị*: VNĐ/Tay
+  * *Mã*: SHRSIGFIN
+  * *Kí hiệu*: {{< katex >}}C_{signature}{{< /katex >}}
+- **Chi phí hoàn thiện mỗi cuốn**
+  * *Chi phí công/máy hoàn thiện theo cuốn; processing không khâu cộng vật tư keo riêng nên cấu hình này không được gồm tiền keo.*
+  * *Đơn vị*: VNĐ/Cuốn
+  * *Mã*: SHRBOOKFIN
+  * *Kí hiệu*: {{< katex >}}C_{book}{{< /katex >}}
+- **Chi phí đơn hàng khác**
+  * *Chi phí cố định khác đã được nhà máy phê duyệt.*
+  * *Đơn vị*: VNĐ
+  * *Mã*: SHROTHER
+  * *Kí hiệu*: {{< katex >}}C_{other}{{< /katex >}}
 ## Hằng số khác
 **Những hằng số mặc định khác**
 
-- **Hệ số bù hao**
-  * *Hệ số bù hao (waste factor) trong in ấn, hay còn gọi là tỷ lệ hao hụt, là một con số được sử dụng để dự đoán lượng giấy in bị hao hụt trong quá trình sản xuất. Con số này thể hiện tỷ lệ phần trăm giấy in bị lãng phí do các yếu tố như sai sót in ấn, cắt xén, chỉnh sửa, hoặc do bản thân giấy in bị lỗi.*
-  * *Đơn vị*: Đơn vị
-  * *Mã*: SHRBH
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}
-- **Khoảng cách chừa nhíp**
-  * *Khoảng cách chừa nhíp (Gripper margin) là khoảng cách giữa mép ngoài của nội dung in ấn và mép cắt của tờ giấy. Khoảng cách này đảm bảo rằng nội dung in ấn không bị cắt mất khi xén thành phẩm.*
+- **Tỷ lệ hao hụt thành phẩm**
+  * *Tỷ lệ hao hụt sau in, nhập dạng thập phân.*
+  * *Đơn vị*: Tỷ lệ
+  * *Mã*: SHRFINLOSS
+  * *Kí hiệu*: {{< katex >}}w_f{{< /katex >}}
+- **Tỷ lệ hao hụt chạy bìa**
+  * *Hao hụt biến đổi khi chạy bìa, chưa gồm tờ căn chỉnh.*
+  * *Đơn vị*: Tỷ lệ
+  * *Mã*: SHRCOVLOSS
+  * *Kí hiệu*: {{< katex >}}w_{p,c}{{< /katex >}}
+- **Tỷ lệ hao hụt chạy ruột**
+  * *Hao hụt biến đổi khi chạy ruột, chưa gồm tờ căn chỉnh.*
+  * *Đơn vị*: Tỷ lệ
+  * *Mã*: SHRINLOSS
+  * *Kí hiệu*: {{< katex >}}w_{p,t}{{< /katex >}}
+- **Tờ căn chỉnh bìa mỗi khuôn-lượt**
+  * *Số tờ make-ready của mỗi khuôn trên mỗi lượt chạy máy.*
+  * *Đơn vị*: Tờ
+  * *Mã*: SHRCOVMR
+  * *Kí hiệu*: {{< katex >}}m_c{{< /katex >}}
+- **Tờ căn chỉnh ruột mỗi khuôn-lượt**
+  * *Số tờ make-ready của mỗi khuôn trên mỗi lượt chạy máy.*
+  * *Đơn vị*: Tờ
+  * *Mã*: SHRINMR
+  * *Kí hiệu*: {{< katex >}}m_t{{< /katex >}}
+- **Khoảng chừa nhíp**
+  * *Phần mép tờ dành cho hệ thống nhíp máy in.*
   * *Đơn vị*: cm
   * *Mã*: SHRKCN
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}O_{gripper}{{< /katex >}}
-- **Khoảng cách chừa xén**
-  * *Khoảng cách chừa xén (Trim margin) là khoảng cách giữa mép ngoài của nội dung in ấn và mép gấp của tờ giấy. Khoảng cách này đảm bảo rằng nội dung in ấn không bị che khuất khi gấp thành phẩm.*
+  * *Kí hiệu*: {{< katex >}}g{{< /katex >}}
+- **Bleed mỗi cạnh**
+  * *Phần tràn lề ở mỗi cạnh thành phẩm.*
   * *Đơn vị*: cm
   * *Mã*: SHRKCX
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}O_{trim}{{< /katex >}}
-- **Khoảng cách thang màu**
-  * *Khoảng cách thang màu (Color bar margin) là khoảng cách giữa các mảng màu trong một bản in. Khoảng cách này đảm bảo rằng các mảng màu không bị dính vào nhau khi in ấn.*
+  * *Kí hiệu*: {{< katex >}}b{{< /katex >}}
+- **Khoảng thang màu**
+  * *Phần mép tờ dành cho thang kiểm soát màu.*
   * *Đơn vị*: cm
   * *Mã*: SHRKTM
-  * *Kí hiệu*: {{< katex >}}\mathcal{S}\mathscr{i}O_{colorbar}{{< /katex >}}
-- **Khoảng cách chừa tay kê**
-  * *Khoảng cách chừa tay kê là khoảng cách tối thiểu giữa mép giấy và vị trí tay kê khi đặt giấy vào máy in*
-  * *Đơn vị*: cm
-  * *Mã*: SHRCTK
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}0_{hand}{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}c{{< /katex >}}
+- **Hệ số hiệu chỉnh gáy sau khâu và ép**
+  * *Hiệu chỉnh độ dày khối ruột sau khâu chỉ và nén gáy.*
+  * *Đơn vị*: Hệ số
+  * *Mã*: SHRSPINE
+  * *Kí hiệu*: {{< katex >}}k_s{{< /katex >}}
+- **Độ dày đóng cuốn tối thiểu**
+  * *Giới hạn nhỏ nhất của dây chuyền vào bìa.*
+  * *Đơn vị*: mm
+  * *Mã*: SHRMINSPINE
+  * *Kí hiệu*: {{< katex >}}s_{min}{{< /katex >}}
+- **Độ dày đóng cuốn tối đa**
+  * *Giới hạn lớn nhất của dây chuyền vào bìa.*
+  * *Đơn vị*: mm
+  * *Mã*: SHRMAXSPINE
+  * *Kí hiệu*: {{< katex >}}s_{max}{{< /katex >}}
 
 

@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
 weight: 20
-title: Đóng ghim giữa gáy
+title: Không khâu bìa keo nhiệt
 ---

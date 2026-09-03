@@ -36,469 +36,622 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
 
 ## Tính Toán
 ### Tính Toán Nguyên Vật Liệu
-- **Tổng số trang sách**
-  * *Tổng số trang sách, gồm số trang bìa và số trang ruột*
+- **Số trang ruột sản xuất**
+  * *Số trang ruột sau khi bù đủ tay sách.*
+  * *Đơn vị*: Trang
+  * *Mã*: MATPRODPG
+  * *Kí hiệu*: {{< katex >}}p_{prod}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{p_t / i_t}\rceil * i_t{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}p_t{{< /katex >}}: Số trang ruột khách hàng (Trang)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
+
+  {{< /details >}}
+- **Tổng số trang khách hàng**
+  * *Tổng số trang bìa và ruột khách hàng.*
   * *Đơn vị*: Trang
   * *Mã*: MATSNP
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover} + \mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}p{{< /katex >}}
+  * *Công thức* :{{< katex >}}p_c + p_t{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}{{< /katex >}}: Số trang bìa mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p_c{{< /katex >}}: Số trang bìa (Trang)<br>
+{{< katex >}}p_t{{< /katex >}}: Số trang ruột khách hàng (Trang)<br>
 
   {{< /details >}}
-- **Độ dày gáy sách**
-  * *Chiều dài của gáy sách*
+- **Số trang trắng bù tay**
+  * *Chênh lệch giữa số trang sản xuất và số trang khách hàng.*
+  * *Đơn vị*: Trang
+  * *Mã*: MATBLANK
+  * *Kí hiệu*: {{< katex >}}p_{blank}{{< /katex >}}
+  * *Công thức* :{{< katex >}}p_{prod} - p_t{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}p_{prod}{{< /katex >}}: Số trang ruột sản xuất (Trang)<br>
+{{< katex >}}p_t{{< /katex >}}: Số trang ruột khách hàng (Trang)<br>
+
+  {{< /details >}}
+- **Số khối ruột cần sản xuất**
+  * *Sản lượng gộp đã bù hao hụt thành phẩm.*
+  * *Đơn vị*: Cuốn
+  * *Mã*: MATGROSS
+  * *Kí hiệu*: {{< katex >}}Q_g{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{Q / (1 - w_f)}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}Q{{< /katex >}}: Số lượng thành phẩm (Cuốn)<br>
+{{< katex >}}w_f{{< /katex >}}: Tỷ lệ hao hụt thành phẩm (Tỷ lệ)<br>
+
+  {{< /details >}}
+- **Số tay sách mỗi cuốn**
+  * *Số tay nguyên vẹn sau bù trang trắng.*
+  * *Đơn vị*: Tay/Cuốn
+  * *Mã*: MATSIG
+  * *Kí hiệu*: {{< katex >}}n_s{{< /katex >}}
+  * *Công thức* :{{< katex >}}p_{prod} / i_t{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}p_{prod}{{< /katex >}}: Số trang ruột sản xuất (Trang)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
+
+  {{< /details >}}
+- **Số khuôn bìa**
+  * *Số khuôn bình bìa cần chạy.*
+  * *Đơn vị*: Khuôn
+  * *Mã*: MATCOVFORM
+  * *Kí hiệu*: {{< katex >}}F_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{p_c / i_c}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}p_c{{< /katex >}}: Số trang bìa (Trang)<br>
+{{< katex >}}i_c{{< /katex >}}: Kiểu bình bìa (Trang/tờ)<br>
+
+  {{< /details >}}
+- **Số khuôn ruột**
+  * *Mỗi tay sách cần một khuôn bình riêng.*
+  * *Đơn vị*: Khuôn
+  * *Mã*: MATINFORM
+  * *Kí hiệu*: {{< katex >}}F_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}n_s{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
+
+  {{< /details >}}
+- **Số lượt màu bìa**
+  * *Số lần chạy để đủ màu theo số đơn vị in của máy.*
+  * *Đơn vị*: Lượt
+  * *Mã*: MATCOVCP
+  * *Kí hiệu*: {{< katex >}}r_{c,color}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{c_c / \mathcal{M}\mathscr{i}PrterCov_{unit}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}c_c{{< /katex >}}: Số màu in bìa (Màu)<br>
+{{< katex >}}\mathcal{M}\mathscr{i}PrterCov_{unit}{{< /katex >}}: Số màu máy in bìa hỗ trợ (Màu)<br>
+
+  {{< /details >}}
+- **Số lượt màu ruột**
+  * *Số lần chạy để đủ màu theo số đơn vị in của máy.*
+  * *Đơn vị*: Lượt
+  * *Mã*: MATINCP
+  * *Kí hiệu*: {{< katex >}}r_{t,color}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{c_t / \mathcal{M}\mathscr{i}PrterCon_{unit}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}c_t{{< /katex >}}: Số màu in ruột (Màu)<br>
+{{< katex >}}\mathcal{M}\mathscr{i}PrterCon_{unit}{{< /katex >}}: Số màu máy in ruột hỗ trợ (Màu)<br>
+
+  {{< /details >}}
+- **Số lượt mặt bìa**
+  * *Số lần chạy để đủ mặt theo khả năng trở mặt của máy.*
+  * *Đơn vị*: Lượt
+  * *Mã*: MATCOVSP
+  * *Kí hiệu*: {{< katex >}}r_{c,side}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{d_c / \mathcal{M}\mathscr{i}PrterCov_{side}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}d_c{{< /katex >}}: Số mặt in bìa (Mặt)<br>
+{{< katex >}}\mathcal{M}\mathscr{i}PrterCov_{side}{{< /katex >}}: Số mặt máy in bìa hỗ trợ (Mặt)<br>
+
+  {{< /details >}}
+- **Số lượt mặt ruột**
+  * *Số lần chạy để đủ mặt theo khả năng trở mặt của máy.*
+  * *Đơn vị*: Lượt
+  * *Mã*: MATINSP
+  * *Kí hiệu*: {{< katex >}}r_{t,side}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{d_t / \mathcal{M}\mathscr{i}PrterCon_{side}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}d_t{{< /katex >}}: Số mặt in ruột (Mặt)<br>
+{{< katex >}}\mathcal{M}\mathscr{i}PrterCon_{side}{{< /katex >}}: Số mặt máy in ruột hỗ trợ (Mặt)<br>
+
+  {{< /details >}}
+- **Tổng lượt chạy bìa mỗi khuôn**
+  * *Tích lượt màu và lượt mặt.*
+  * *Đơn vị*: Lượt/Khuôn
+  * *Mã*: MATCOVPASS
+  * *Kí hiệu*: {{< katex >}}r_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}r_{c,color} * r_{c,side}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}r_{c,color}{{< /katex >}}: Số lượt màu bìa (Lượt)<br>
+{{< katex >}}r_{c,side}{{< /katex >}}: Số lượt mặt bìa (Lượt)<br>
+
+  {{< /details >}}
+- **Tổng lượt chạy ruột mỗi khuôn**
+  * *Tích lượt màu và lượt mặt.*
+  * *Đơn vị*: Lượt/Khuôn
+  * *Mã*: MATINPASS
+  * *Kí hiệu*: {{< katex >}}r_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}r_{t,color} * r_{t,side}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}r_{t,color}{{< /katex >}}: Số lượt màu ruột (Lượt)<br>
+{{< katex >}}r_{t,side}{{< /katex >}}: Số lượt mặt ruột (Lượt)<br>
+
+  {{< /details >}}
+- **Tờ bìa tốt tối thiểu**
+  * *Tờ tốt cần thiết cho sản lượng gộp.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATCOVNET
+  * *Kí hiệu*: {{< katex >}}N_{c,net}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{Q_g * p_c / i_c}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
+{{< katex >}}p_c{{< /katex >}}: Số trang bìa (Trang)<br>
+{{< katex >}}i_c{{< /katex >}}: Kiểu bình bìa (Trang/tờ)<br>
+
+  {{< /details >}}
+- **Tờ ruột tốt tối thiểu**
+  * *Một tờ cho mỗi tay của mỗi khối ruột.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATINNET
+  * *Kí hiệu*: {{< katex >}}N_{t,net}{{< /katex >}}
+  * *Công thức* :{{< katex >}}Q_g * n_s{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
+{{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
+
+  {{< /details >}}
+- **Tờ chạy bìa sau hao hụt biến đổi**
+  * *Tờ chạy sản lượng, chưa gồm make-ready.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATCOVRUN
+  * *Kí hiệu*: {{< katex >}}N_{c,run}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{N_{c,net} / (1 - w_{p,c})}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}N_{c,net}{{< /katex >}}: Tờ bìa tốt tối thiểu (Tờ)<br>
+{{< katex >}}w_{p,c}{{< /katex >}}: Tỷ lệ hao hụt chạy bìa (Tỷ lệ)<br>
+
+  {{< /details >}}
+- **Tờ chạy ruột sau hao hụt biến đổi**
+  * *Tờ chạy sản lượng, chưa gồm make-ready.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATINRUN
+  * *Kí hiệu*: {{< katex >}}N_{t,run}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{N_{t,net} / (1 - w_{p,t})}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}N_{t,net}{{< /katex >}}: Tờ ruột tốt tối thiểu (Tờ)<br>
+{{< katex >}}w_{p,t}{{< /katex >}}: Tỷ lệ hao hụt chạy ruột (Tỷ lệ)<br>
+
+  {{< /details >}}
+- **Tờ căn chỉnh bìa**
+  * *Make-ready cố định theo khuôn và lượt.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATCOVSET
+  * *Kí hiệu*: {{< katex >}}N_{c,set}{{< /katex >}}
+  * *Công thức* :{{< katex >}}m_c * F_c * r_c{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}m_c{{< /katex >}}: Tờ căn chỉnh bìa mỗi khuôn-lượt (Tờ)<br>
+{{< katex >}}F_c{{< /katex >}}: Số khuôn bìa (Khuôn)<br>
+{{< katex >}}r_c{{< /katex >}}: Tổng lượt chạy bìa mỗi khuôn (Lượt/Khuôn)<br>
+
+  {{< /details >}}
+- **Tờ căn chỉnh ruột**
+  * *Make-ready cố định theo khuôn và lượt.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATINSET
+  * *Kí hiệu*: {{< katex >}}N_{t,set}{{< /katex >}}
+  * *Công thức* :{{< katex >}}m_t * F_t * r_t{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}m_t{{< /katex >}}: Tờ căn chỉnh ruột mỗi khuôn-lượt (Tờ)<br>
+{{< katex >}}F_t{{< /katex >}}: Số khuôn ruột (Khuôn)<br>
+{{< katex >}}r_t{{< /katex >}}: Tổng lượt chạy ruột mỗi khuôn (Lượt/Khuôn)<br>
+
+  {{< /details >}}
+- **Tổng tờ giấy bìa tiêu thụ**
+  * *Tờ chạy cộng tờ căn chỉnh.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATPNB
+  * *Kí hiệu*: {{< katex >}}N_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_{c,run} + N_{c,set}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}N_{c,run}{{< /katex >}}: Tờ chạy bìa sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}N_{c,set}{{< /katex >}}: Tờ căn chỉnh bìa (Tờ)<br>
+
+  {{< /details >}}
+- **Tổng tờ giấy ruột tiêu thụ**
+  * *Tờ chạy cộng tờ căn chỉnh.*
+  * *Đơn vị*: Tờ
+  * *Mã*: MATPNR
+  * *Kí hiệu*: {{< katex >}}N_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_{t,run} + N_{t,set}{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}N_{t,run}{{< /katex >}}: Tờ chạy ruột sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}N_{t,set}{{< /katex >}}: Tờ căn chỉnh ruột (Tờ)<br>
+
+  {{< /details >}}
+- **Số bản offset bìa**
+  * *Một bản cho mỗi khuôn, màu và mặt.*
+  * *Đơn vị*: Bản
+  * *Mã*: MATPCB
+  * *Kí hiệu*: {{< katex >}}P_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}F_c * c_c * d_c{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}F_c{{< /katex >}}: Số khuôn bìa (Khuôn)<br>
+{{< katex >}}c_c{{< /katex >}}: Số màu in bìa (Màu)<br>
+{{< katex >}}d_c{{< /katex >}}: Số mặt in bìa (Mặt)<br>
+
+  {{< /details >}}
+- **Số bản offset ruột**
+  * *Một bản cho mỗi khuôn, màu và mặt.*
+  * *Đơn vị*: Bản
+  * *Mã*: MATPCR
+  * *Kí hiệu*: {{< katex >}}P_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}F_t * c_t * d_t{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}F_t{{< /katex >}}: Số khuôn ruột (Khuôn)<br>
+{{< katex >}}c_t{{< /katex >}}: Số màu in ruột (Màu)<br>
+{{< katex >}}d_t{{< /katex >}}: Số mặt in ruột (Mặt)<br>
+
+  {{< /details >}}
+- **Độ dày khối ruột tại gáy**
+  * *Số lá nhân caliper đo được và hệ số hiệu chỉnh sau khâu/nén.*
   * *Đơn vị*: cm
   * *Mã*: MATGS
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Bk_{length}{{< /katex >}}
-  * *Công thức* :{{< katex >}}(\mathcal{M}\mathscr{i}{\Sigma}pg_{content} * \mathcal{M}\mathscr{i}{\Rho}pp_{content} * 10^-4) / 2{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}s{{< /katex >}}
+  * *Công thức* :{{< katex >}}p_{prod} / 2 * t_t * 0.0001 * k_s{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Rho}pp_{content}{{< /katex >}}: Định lượng giấy ruột (g/m²)<br>
-
-  {{< /details >}}
-- **Khổ tờ in ruột - Chiều dài**
-  * *Chiều dài của tờ gấy để in ruột sách*
-  * *Đơn vị*: cm
-  * *Mã*: MATKIRD
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}SR_{length}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}} thuộc [•  4  	•  16  	]: {{< katex >}}\lceil{ (\mathcal{M}\mathscr{i}Sz_{width} * \mathcal{M}\mathscr{i}Imp_{content}) / 4 + (\sqrt{\mathcal{M}\mathscr{i}Imp_{content}} * \mathcal{S}\mathscr{i}O_{trim}) }\rceil{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{\sqrt{\mathcal{M}\mathscr{i}Imp_{content}/2} * (\mathcal{M}\mathscr{i}Sz_{length} + 2 * \mathcal{S}\mathscr{i}O_{trim})}\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{trim}{{< /katex >}}: Khoảng cách chừa xén (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p_{prod}{{< /katex >}}: Số trang ruột sản xuất (Trang)<br>
+{{< katex >}}t_t{{< /katex >}}: Caliper giấy ruột (µm)<br>
+{{< katex >}}k_s{{< /katex >}}: Hệ số hiệu chỉnh gáy sau khâu và ép (Hệ số)<br>
 
   {{< /details >}}
-- **Khổ tờ in ruột - Chiều rộng**
-  * *Chiều rộng của tờ gấy để in ruột sách*
-  * *Đơn vị*: cm
-  * *Mã*: MATKIRR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}SR_{width}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}} thuộc [•  4  	•  16  	]: {{< katex >}}\lceil{ \sqrt{\mathcal{M}\mathscr{i}Imp_{content}} * (\mathcal{M}\mathscr{i}Sz_{length}/2  + \mathcal{S}\mathscr{i}O_{trim}) + \mathcal{S}\mathscr{i}O_{gripper} + \mathcal{S}\mathscr{i}O_{colorbar} }\rceil{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{\sqrt{\mathcal{M}\mathscr{i}Imp_{content}/2} * (\mathcal{M}\mathscr{i}Sz_{width} + \mathcal{S}\mathscr{i}O_{trim}) + \mathcal{S}\mathscr{i}O_{gripper} + \mathcal{S}\mathscr{i}O_{colorbar}}\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{trim}{{< /katex >}}: Khoảng cách chừa xén (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{gripper}{{< /katex >}}: Khoảng cách chừa nhíp (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{colorbar}{{< /katex >}}: Khoảng cách thang màu (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
-
-  {{< /details >}}
-- **Khổ tờ in bìa - Chiều dài**
-  * *Chiều dài của tờ giấy để in bìa sách*
+- **Khổ bình bìa yêu cầu - dài**
+  * *Kích thước bố trí bảo thủ gồm bleed, nhíp và thang màu.*
   * *Đơn vị*: cm
   * *Mã*: MATKIBD
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}SB_{length}{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}L_c{{< /katex >}}
   * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}} thuộc [•  4  	•  16  	]: {{< katex >}}\lceil{ \sqrt{\mathcal{M}\mathscr{i}Imp_{cover}} * (\mathcal{M}\mathscr{c}Bk_{length}/2 + \mathcal{S}\mathscr{i}O_{trim}) + (\mathcal{M}\mathscr{i}Sz_{width} * \mathcal{M}\mathscr{i}Imp_{cover}) / 4 }\rceil{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{\sqrt{\mathcal{M}\mathscr{i}Imp_{cover}/2} * (\mathcal{M}\mathscr{i}Sz_{length} + 2* \mathcal{S}\mathscr{i}O_{trim})}\rceil{{< /katex >}}
+	* Nếu {{< katex >}}i_c{{< /katex >}} bằng [•  4  	]: {{< katex >}}\lceil{((2 * w + s + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(2 * (2 * w + s + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}}: Kiểu bình - Bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{trim}{{< /katex >}}: Khoảng cách chừa xén (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Bk_{length}{{< /katex >}}: Độ dày gáy sách (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}w{{< /katex >}}: Chiều rộng thành phẩm (cm)<br>
+{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
+{{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
+{{< katex >}}g{{< /katex >}}: Khoảng chừa nhíp (cm)<br>
+{{< katex >}}c{{< /katex >}}: Khoảng thang màu (cm)<br>
+{{< katex >}}i_c{{< /katex >}}: Kiểu bình bìa (Trang/tờ)<br>
 
   {{< /details >}}
-- **Khổ tờ in bìa - Chiều rộng**
-  * *Chiều rộng của tờ giấy để in bìa sách*
+- **Khổ bình bìa yêu cầu - rộng**
+  * *Kích thước bố trí bảo thủ theo số bìa trên tờ.*
   * *Đơn vị*: cm
   * *Mã*: MATKIBR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}SB_{width}{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}W_c{{< /katex >}}
   * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}} thuộc [•  4  	•  16  	]: {{< katex >}}\lceil{ \sqrt{\mathcal{M}\mathscr{i}Imp_{cover}} * (\mathcal{M}\mathscr{i}Sz_{length}/2  + \mathcal{S}\mathscr{i}O_{trim}) + \mathcal{S}\mathscr{i}O_{gripper} + \mathcal{S}\mathscr{i}O_{colorbar} }\rceil{{< /katex >}}
-	* Ngoài ra: {{< katex >}}\lceil{\sqrt{\mathcal{M}\mathscr{i}Imp_{cover}/2} * (\mathcal{M}\mathscr{i}Sz_{width} + \mathcal{M}\mathscr{c}Bk_{length}/2 * \mathcal{S}\mathscr{i}O_{trim}) + \mathcal{S}\mathscr{i}O_{gripper} + \mathcal{S}\mathscr{i}O_{colorbar}}\rceil{{< /katex >}}
+	* Nếu {{< katex >}}i_c{{< /katex >}} thuộc [•  4  	•  8  	]: {{< katex >}}\lceil{(h + 2 * b) * 10}\rceil / 10{{< /katex >}}
+	* Nếu {{< katex >}}i_c{{< /katex >}} bằng [•  16  	]: {{< katex >}}\lceil{(2 * (h + 2 * b)) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(4 * (h + 2 * b)) * 10}\rceil / 10{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}}: Kiểu bình - Bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Bk_{length}{{< /katex >}}: Độ dày gáy sách (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{trim}{{< /katex >}}: Khoảng cách chừa xén (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{gripper}{{< /katex >}}: Khoảng cách chừa nhíp (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{colorbar}{{< /katex >}}: Khoảng cách thang màu (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}h{{< /katex >}}: Chiều dài thành phẩm (cm)<br>
+{{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
+{{< katex >}}i_c{{< /katex >}}: Kiểu bình bìa (Trang/tờ)<br>
 
   {{< /details >}}
-- **Số lượng bản in ruột**
-  * *Số lượng bản in (print copy) thực tế cho phần nội dung bên trong của sản phẩm in, bao gồm tất cả các trang bên trong, không bao gồm bìa.*
-  * *Đơn vị*: Đơn vị
-  * *Mã*: MATPCR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/\mathcal{M}\mathscr{i}Imp_{content} * \mathcal{M}\mathscr{i}Ncl_{content} * \mathcal{M}\mathscr{i}Nsd_{content}}\rceil{{< /katex >}}
+- **Khổ bình ruột yêu cầu - dài**
+  * *Grid trang trên một mặt tờ, có bleed, nhíp và thang màu.*
+  * *Đơn vị*: cm
+  * *Mã*: MATKIRD
+  * *Kí hiệu*: {{< katex >}}L_t{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}i_t{{< /katex >}} bằng [•  8  	]: {{< katex >}}\lceil{(2 * (w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(4 * (w + 2 * b) + g + c) * 10}\rceil / 10{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{content}{{< /katex >}}: Số màu in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
-
-  {{< /details >}}
-- **Số lượng bản in bìa**
-  * *Số lượng bản in (print copy) thực tế cho phần bìa của sản phẩm in.*
-  * *Đơn vị*: Đơn vị
-  * *Mã*: MATPCB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{cover} * \mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{cover}{{< /katex >}}: Số màu in bia (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}: Số mặt in bìa (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}w{{< /katex >}}: Chiều rộng thành phẩm (cm)<br>
+{{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
+{{< katex >}}g{{< /katex >}}: Khoảng chừa nhíp (cm)<br>
+{{< katex >}}c{{< /katex >}}: Khoảng thang màu (cm)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
 
   {{< /details >}}
-- **Khối lượng giấy in bìa**
-  * *Công thức tính khối lượng giấy in bìa*
+- **Khổ bình ruột yêu cầu - rộng**
+  * *Grid trang trên một mặt tờ theo kiểu bình.*
+  * *Đơn vị*: cm
+  * *Mã*: MATKIRR
+  * *Kí hiệu*: {{< katex >}}W_t{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}i_t{{< /katex >}} thuộc [•  8  	•  16  	]: {{< katex >}}\lceil{(2 * (h + 2 * b)) * 10}\rceil / 10{{< /katex >}}
+	* Ngoài ra: {{< katex >}}\lceil{(4 * (h + 2 * b)) * 10}\rceil / 10{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}h{{< /katex >}}: Chiều dài thành phẩm (cm)<br>
+{{< katex >}}b{{< /katex >}}: Bleed mỗi cạnh (cm)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
+
+  {{< /details >}}
+- **Bìa vừa tờ chạy**
+  * *1 nếu khổ bình vừa tờ chạy ở ít nhất một hướng xoay.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATVALIDC
+  * *Kí hiệu*: {{< katex >}}V_c{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}L_c{{< /katex >}} thỏa mãn {{< katex >}}((L_c <= S_{c,l} && W_c <= S_{c,w}) || (L_c <= S_{c,w} && W_c <= S_{c,l})){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}L_c{{< /katex >}}: Khổ bình bìa yêu cầu - dài (cm)<br>
+{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}W_c{{< /katex >}}: Khổ bình bìa yêu cầu - rộng (cm)<br>
+{{< katex >}}S_{c,w}{{< /katex >}}: Khổ tờ chạy bìa - rộng (cm)<br>
+
+  {{< /details >}}
+- **Ruột vừa tờ chạy**
+  * *1 nếu khổ bình vừa tờ chạy ở ít nhất một hướng xoay.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATVALIDT
+  * *Kí hiệu*: {{< katex >}}V_t{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}L_t{{< /katex >}} thỏa mãn {{< katex >}}((L_t <= S_{t,l} && W_t <= S_{t,w}) || (L_t <= S_{t,w} && W_t <= S_{t,l})){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}L_t{{< /katex >}}: Khổ bình ruột yêu cầu - dài (cm)<br>
+{{< katex >}}S_{t,l}{{< /katex >}}: Khổ tờ chạy ruột - dài (cm)<br>
+{{< katex >}}W_t{{< /katex >}}: Khổ bình ruột yêu cầu - rộng (cm)<br>
+{{< katex >}}S_{t,w}{{< /katex >}}: Khổ tờ chạy ruột - rộng (cm)<br>
+
+  {{< /details >}}
+- **Tờ bìa vừa máy**
+  * *1 nếu tờ chạy bìa vừa khổ máy ở ít nhất một hướng.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATVALIDMC
+  * *Kí hiệu*: {{< katex >}}V_{mc}{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}S_{c,l}{{< /katex >}} thỏa mãn {{< katex >}}((S_{c,l} <= M_{c,l} && S_{c,w} <= M_{c,w}) || (S_{c,l} <= M_{c,w} && S_{c,w} <= M_{c,l})){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}M_{c,l}{{< /katex >}}: Khổ máy in bìa - dài (cm)<br>
+{{< katex >}}S_{c,w}{{< /katex >}}: Khổ tờ chạy bìa - rộng (cm)<br>
+{{< katex >}}M_{c,w}{{< /katex >}}: Khổ máy in bìa - rộng (cm)<br>
+
+  {{< /details >}}
+- **Tờ ruột vừa máy**
+  * *1 nếu tờ chạy ruột vừa khổ máy ở ít nhất một hướng.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATVALIDMT
+  * *Kí hiệu*: {{< katex >}}V_{mt}{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}S_{t,l}{{< /katex >}} thỏa mãn {{< katex >}}((S_{t,l} <= M_{t,l} && S_{t,w} <= M_{t,w}) || (S_{t,l} <= M_{t,w} && S_{t,w} <= M_{t,l})){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}S_{t,l}{{< /katex >}}: Khổ tờ chạy ruột - dài (cm)<br>
+{{< katex >}}M_{t,l}{{< /katex >}}: Khổ máy in ruột - dài (cm)<br>
+{{< katex >}}S_{t,w}{{< /katex >}}: Khổ tờ chạy ruột - rộng (cm)<br>
+{{< katex >}}M_{t,w}{{< /katex >}}: Khổ máy in ruột - rộng (cm)<br>
+
+  {{< /details >}}
+- **Gáy trong giới hạn máy đóng cuốn**
+  * *1 nếu độ dày gáy nằm trong giới hạn cấu hình.*
+  * *Đơn vị*: Boolean
+  * *Mã*: MATVALIDS
+  * *Kí hiệu*: {{< katex >}}V_s{{< /katex >}}
+  * *Công thức* :
+	* Nếu {{< katex >}}s{{< /katex >}} thỏa mãn {{< katex >}}(s * 10 >= s_{min} && s * 10 <= s_{max}){{< /katex >}}: {{< katex >}}1{{< /katex >}}
+	* Ngoài ra: {{< katex >}}0{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}s{{< /katex >}}: Độ dày khối ruột tại gáy (cm)<br>
+{{< katex >}}s_{min}{{< /katex >}}: Độ dày đóng cuốn tối thiểu (mm)<br>
+{{< katex >}}s_{max}{{< /katex >}}: Độ dày đóng cuốn tối đa (mm)<br>
+
+  {{< /details >}}
+- **Khối lượng giấy bìa**
+  * *Tổng tờ vật lý nhân diện tích tờ chạy và định lượng.*
   * *Đơn vị*: Tấn
   * *Mã*: MATPWB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PW{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover} * \mathcal{M}\mathscr{c}SB_{length} * \mathcal{M}\mathscr{c}SB_{width} *MATDLB * 0.0000000001{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}W_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_c * S_{c,l} * S_{c,w} * gsm_c * 0.0000000001{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}{{< /katex >}}: Số trang bìa mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}SB_{length}{{< /katex >}}: Khổ tờ in bìa - Chiều dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}SB_{width}{{< /katex >}}: Khổ tờ in bìa - Chiều rộng (cm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_c{{< /katex >}}: Tổng tờ giấy bìa tiêu thụ (Tờ)<br>
+{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}S_{c,w}{{< /katex >}}: Khổ tờ chạy bìa - rộng (cm)<br>
+{{< katex >}}gsm_c{{< /katex >}}: Định lượng giấy bìa (g/m²)<br>
 
   {{< /details >}}
-- **Khối lượng giấy in ruột**
-  * *Công thức tính khối lượng giấy in ruột*
+- **Khối lượng giấy ruột**
+  * *Tổng tờ vật lý nhân diện tích tờ chạy và định lượng.*
   * *Đơn vị*: Tấn
   * *Mã*: MATPWR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PW{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content} * \mathcal{M}\mathscr{c}SR_{length} * \mathcal{M}\mathscr{c}SR_{width} *\mathcal{M}\mathscr{i}{\Rho}pp_{content} * 0.0000000001{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}W_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_t * S_{t,l} * S_{t,w} * gsm_t * 0.0000000001{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}SR_{length}{{< /katex >}}: Khổ tờ in ruột - Chiều dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}SR_{width}{{< /katex >}}: Khổ tờ in ruột - Chiều rộng (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Rho}pp_{content}{{< /katex >}}: Định lượng giấy ruột (g/m²)<br>
-
-  {{< /details >}}
-- **Định lượng mực in ruột**
-  * *Lượng mực in (tính bằng kg) cần thiết để in 1 triệu trang in với độ phủ mực tiêu chuẩn (thường là 5%)*
-  * *Đơn vị*: kg/1 triệu trang
-  * *Mã*: MATIQR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}IQ{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}round(-0.02 * (\mathcal{M}\mathscr{i}Ncl_{content} * \mathcal{M}\mathscr{i}Ncl_{content}) + 2.3 * \mathcal{M}\mathscr{i}Ncl_{content} +3){{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{content}{{< /katex >}}: Số màu in ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_t{{< /katex >}}: Tổng tờ giấy ruột tiêu thụ (Tờ)<br>
+{{< katex >}}S_{t,l}{{< /katex >}}: Khổ tờ chạy ruột - dài (cm)<br>
+{{< katex >}}S_{t,w}{{< /katex >}}: Khổ tờ chạy ruột - rộng (cm)<br>
+{{< katex >}}gsm_t{{< /katex >}}: Định lượng giấy ruột (g/m²)<br>
 
   {{< /details >}}
-- **Định lượng mực in bìa**
-  * *Lượng mực in (tính bằng kg) cần thiết để in 1 triệu trang bìa in với độ phủ mực tiêu chuẩn (thường là 5%)*
-  * *Đơn vị*: kg/1 triệu trang
-  * *Mã*: MATIQB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}IQ{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}round(-0.02 * (\mathcal{M}\mathscr{i}Ncl_{cover} * \mathcal{M}\mathscr{i}Ncl_{cover}) + 2.3 * \mathcal{M}\mathscr{i}Ncl_{cover} +3){{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{cover}{{< /katex >}}: Số màu in bia (Đơn vị)<br>
-
-  {{< /details >}}
-- **Khối lượng mực in bìa**
-  * *Khối lượng mực in trang bìa (tính bằng kg) tính theo trang in tiêu chuẩn (13 x 19 cm)*
+- **Khối lượng mực bìa**
+  * *Tờ-màu-mặt nhân diện tích, độ phủ và định mức màng mực.*
   * *Đơn vị*: kg
   * *Mã*: MATIWB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}IW{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}{\Sigma}pg_{cover} * \mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * \mathcal{M}\mathscr{i}Sz_{length} * \mathcal{M}\mathscr{i}Sz_{width} * \mathcal{M}\mathscr{c}IQ{content} * \mathcal{M}\mathscr{i}Nsd_{cover}) / (13 * 19 * 2 * 10 ^ 6)}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}I_c{{< /katex >}}
+  * *Công thức* :{{< katex >}}((N_{c,run} * c_c * d_c) + (N_{c,set} * (c_c / r_{c,color}) * (d_c / r_{c,side}))) * S_{c,l} * S_{c,w} * a_c * f_{ink} * 0.000000001{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}{{< /katex >}}: Số trang bìa mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}IQ{content}{{< /katex >}}: Định lượng mực in bìa (kg/1 triệu trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}: Số mặt in bìa (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_{c,run}{{< /katex >}}: Tờ chạy bìa sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}c_c{{< /katex >}}: Số màu in bìa (Màu)<br>
+{{< katex >}}d_c{{< /katex >}}: Số mặt in bìa (Mặt)<br>
+{{< katex >}}N_{c,set}{{< /katex >}}: Tờ căn chỉnh bìa (Tờ)<br>
+{{< katex >}}r_{c,color}{{< /katex >}}: Số lượt màu bìa (Lượt)<br>
+{{< katex >}}r_{c,side}{{< /katex >}}: Số lượt mặt bìa (Lượt)<br>
+{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}S_{c,w}{{< /katex >}}: Khổ tờ chạy bìa - rộng (cm)<br>
+{{< katex >}}a_c{{< /katex >}}: Độ phủ trung bình mỗi màu bìa (%)<br>
+{{< katex >}}f_{ink}{{< /katex >}}: Định mức màng mực tại 100% phủ (g/m²)<br>
 
   {{< /details >}}
-- **Khối lượng mực in ruột**
-  * *Khối lượng mực in trang ruột (tính bằng kg) tính theo trang in tiêu chuẩn (13 x 19 cm)*
+- **Khối lượng mực ruột**
+  * *Tờ-màu-mặt nhân diện tích, độ phủ và định mức màng mực.*
   * *Đơn vị*: kg
   * *Mã*: MATIWR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}IW{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}{\Sigma}pg_{content} * \mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * \mathcal{M}\mathscr{i}Sz_{length} * \mathcal{M}\mathscr{i}Sz_{width} * \mathcal{M}\mathscr{c}IQ{cover} * \mathcal{M}\mathscr{i}Nsd_{content}) / (13 * 19 * 2 * 10 ^ 6)}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}I_t{{< /katex >}}
+  * *Công thức* :{{< katex >}}((N_{t,run} * c_t * d_t) + (N_{t,set} * (c_t / r_{t,color}) * (d_t / r_{t,side}))) * S_{t,l} * S_{t,w} * a_t * f_{ink} * 0.000000001{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{length}{{< /katex >}}: Chiều dài khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Sz_{width}{{< /katex >}}: Chiều rộng khổ thành phẩm (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}IQ{cover}{{< /katex >}}: Định lượng mực in ruột (kg/1 triệu trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
-
-  {{< /details >}}
-- **Số lượng tờ in bìa**
-  * *Công thức tính số lượng tờ in bìa*
-  * *Đơn vị*: tờ
-  * *Mã*: MATPNB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PN{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}C_{copies} * (\mathcal{M}\mathscr{i}{\Sigma}pg_{cover} / \mathcal{M}\mathscr{i}Imp_{cover}) * \mathcal{S}\mathscr{i}O_{wf} }\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}{{< /katex >}}: Số trang bìa mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}}: Kiểu bình - Bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-
-  {{< /details >}}
-- **Số lượng tờ in ruột**
-  * *Công thức tính số lượng tờ in ruột*
-  * *Đơn vị*: tờ
-  * *Mã*: MATPNR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}PN{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}C_{copies} * (\mathcal{M}\mathscr{i}{\Sigma}pg_{content} / \mathcal{M}\mathscr{i}Imp_{content}) * \mathcal{S}\mathscr{i}O_{wf} }\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-
-  {{< /details >}}
-- **Hệ số kiểu bình bìa**
-  * *Hệ số kiểu bình bìa*
-  * *Đơn vị*: đơn vị
-  * *Mã*: MATHSKBB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}round((\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}/\mathcal{M}\mathscr{i}Imp_{cover} - floor(\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}/\mathcal{M}\mathscr{i}Imp_{cover})) * 1000){{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{cover}{{< /katex >}}: Số trang bìa mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{cover}{{< /katex >}}: Kiểu bình - Bìa (Đơn vị)<br>
-
-  {{< /details >}}
-- **Hệ số pha cắt bìa**
-  * *Hệ số pha cắt bìa*
-  * *Đơn vị*: đơn vị
-  * *Mã*: MATHSPCB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}knife_phase_mod{cover}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  500  	]: {{< katex >}}1{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  250  	]: {{< katex >}}3{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  125  	]: {{< katex >}}7{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  750  	]: {{< katex >}}1 + 3{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  625  	]: {{< katex >}}1 + 7{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  375  	]: {{< katex >}}3 + 7{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}} bằng [•  875  	]: {{< katex >}}1 + 3 + 7{{< /katex >}}
-	* Ngoài ra: {{< katex >}}5{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}imp_mod{cover}{{< /katex >}}: Hệ số kiểu bình bìa (đơn vị)<br>
-
-  {{< /details >}}
-- **Hệ số kiểu bình ruột**
-  * *Hệ số kiểu bình bìa*
-  * *Đơn vị*: đơn vị
-  * *Mã*: MATHSKBR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}round((\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/\mathcal{M}\mathscr{i}Imp_{content} - floor(\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/\mathcal{M}\mathscr{i}Imp_{content})) * 1000){{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-
-  {{< /details >}}
-- **Hệ số pha cắt ruột**
-  * *Hệ số pha cắt ruột*
-  * *Đơn vị*: đơn vị
-  * *Mã*: MATHSPCR
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}knife_phase_mod{content}{{< /katex >}}
-  * *Công thức* :
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  500  	]: {{< katex >}}1 * 0.5{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  250  	]: {{< katex >}}3 * 0.25{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  125  	]: {{< katex >}}7 * 0.125{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  750  	]: {{< katex >}}1 * 0.5 + 3 * 0.25{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  625  	]: {{< katex >}}1 * 0.5 + 7 * 0.125{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  375  	]: {{< katex >}}3 * 0.25 + 7 * 0.125{{< /katex >}}
-	* Nếu {{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}} bằng [•  875  	]: {{< katex >}}1 * 0.5 + 3 * 0.25 + 7 * 0.125{{< /katex >}}
-	* Ngoài ra: {{< katex >}}0.5{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}imp_mod{content}{{< /katex >}}: Hệ số kiểu bình ruột (đơn vị)<br>
-
-  {{< /details >}}
-- **Khổ màng bìa**
-  * *Công thức tính khổ màng bìa*
-  * *Đơn vị*: cm
-  * *Mã*: MATMBW
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Fl{width}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{c}SB_{width} - \mathcal{M}\mathscr{i}0_{hand} - \mathcal{S}\mathscr{i}O_{colorbar} + 0.4{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}SB_{width}{{< /katex >}}: Khổ tờ in bìa - Chiều rộng (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{hand}{{< /katex >}}: Khoảng cách chừa tay kê (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{colorbar}{{< /katex >}}: Khoảng cách thang màu (cm)<br>
-
-  {{< /details >}}
-- **Độ dài màng bìa**
-  * *Công thức tính độ dài màng bìa*
-  * *Đơn vị*: m
-  * *Mã*: MATMBL
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Fl{length}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{c}SB_{length} * \mathcal{M}\mathscr{c}PN{cover} * 0.01{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}SB_{length}{{< /katex >}}: Khổ tờ in bìa - Chiều dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PN{cover}{{< /katex >}}: Số lượng tờ in bìa (tờ)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_{t,run}{{< /katex >}}: Tờ chạy ruột sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}c_t{{< /katex >}}: Số màu in ruột (Màu)<br>
+{{< katex >}}d_t{{< /katex >}}: Số mặt in ruột (Mặt)<br>
+{{< katex >}}N_{t,set}{{< /katex >}}: Tờ căn chỉnh ruột (Tờ)<br>
+{{< katex >}}r_{t,color}{{< /katex >}}: Số lượt màu ruột (Lượt)<br>
+{{< katex >}}r_{t,side}{{< /katex >}}: Số lượt mặt ruột (Lượt)<br>
+{{< katex >}}S_{t,l}{{< /katex >}}: Khổ tờ chạy ruột - dài (cm)<br>
+{{< katex >}}S_{t,w}{{< /katex >}}: Khổ tờ chạy ruột - rộng (cm)<br>
+{{< katex >}}a_t{{< /katex >}}: Độ phủ trung bình mỗi màu ruột (%)<br>
+{{< katex >}}f_{ink}{{< /katex >}}: Định mức màng mực tại 100% phủ (g/m²)<br>
 
   {{< /details >}}
 - **Diện tích màng bìa**
-  * *Công thức tính tổng diện tích sử dụng màng bìa*
-  * *Đơn vị*: cm²
-  * *Mã*: MATDTMB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Fl{length}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{c}Fl{width} * \mathcal{M}\mathscr{c}Fl{length} * 10 ^ 2{{< /katex >}}
+  * *Diện tích tờ bìa tiêu thụ nhân số mặt cán.*
+  * *Đơn vị*: m²
+  * *Mã*: MATFILM
+  * *Kí hiệu*: {{< katex >}}A_f{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_c * S_{c,l} * S_{c,w} * n_{lam} * 0.0001{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Fl{width}{{< /katex >}}: Khổ màng bìa (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Fl{length}{{< /katex >}}: Độ dài màng bìa (m)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_c{{< /katex >}}: Tổng tờ giấy bìa tiêu thụ (Tờ)<br>
+{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}S_{c,w}{{< /katex >}}: Khổ tờ chạy bìa - rộng (cm)<br>
+{{< katex >}}n_{lam}{{< /katex >}}: Số mặt cán màng bìa (Mặt)<br>
+
+  {{< /details >}}
+- **Chiều dài màng chạy**
+  * *Tổng chiều dài tờ bìa qua máy cán, nhân số mặt cán.*
+  * *Đơn vị*: m
+  * *Mã*: MATFILMLEN
+  * *Kí hiệu*: {{< katex >}}l_f{{< /katex >}}
+  * *Công thức* :{{< katex >}}N_c * S_{c,l} * n_{lam} * 0.01{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}N_c{{< /katex >}}: Tổng tờ giấy bìa tiêu thụ (Tờ)<br>
+{{< katex >}}S_{c,l}{{< /katex >}}: Khổ tờ chạy bìa - dài (cm)<br>
+{{< katex >}}n_{lam}{{< /katex >}}: Số mặt cán màng bìa (Mặt)<br>
 
   {{< /details >}}
 - **Chi phí giấy**
-  * *Công thức tính chi phí giấy*
+  * *Chi phí giấy bìa và ruột theo khối lượng riêng.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCG
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{paper}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PW{cover} + \mathcal{M}\mathscr{c}PW{content}) * \mathcal{S}\mathscr{i}M_{paper} }\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_p{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{W_c * P_{paper,cover} + W_t * P_{paper,text}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PW{cover}{{< /katex >}}: Khối lượng giấy in bìa (Tấn)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PW{content}{{< /katex >}}: Khối lượng giấy in ruột (Tấn)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}M_{paper}{{< /katex >}}: Đơn giá giấy (VNĐ/Tấn)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}W_c{{< /katex >}}: Khối lượng giấy bìa (Tấn)<br>
+{{< katex >}}P_{paper,cover}{{< /katex >}}: Đơn giá giấy bìa (VNĐ/Tấn)<br>
+{{< katex >}}W_t{{< /katex >}}: Khối lượng giấy ruột (Tấn)<br>
+{{< katex >}}P_{paper,text}{{< /katex >}}: Đơn giá giấy ruột (VNĐ/Tấn)<br>
 
   {{< /details >}}
-- **Chi phí bản in**
-  * *Công thức tính chi phí bản in*
+- **Chi phí vật tư bản**
+  * *Số bản nhân đúng diện tích bản tương ứng.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCBI
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{impression}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PC_{cover} * \mathcal{M}\mathscr{c}PrterCov_{length} * \mathcal{M}\mathscr{c}PrterCov_{width} + \mathcal{M}\mathscr{c}PC_{content} * \mathcal{M}\mathscr{c}PrterCon_{length} * \mathcal{M}\mathscr{c}PrterCon_{width}) * \mathcal{S}\mathscr{i}M_{imp} }\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_{plate}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(P_c * B_{c,l} * B_{c,w} + P_t * B_{t,l} * B_{t,w}) * P_{plate}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}: Số lượng bản in bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCov_{length}{{< /katex >}}: Khổ máy in bìa - dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCov_{width}{{< /katex >}}: Khổ máy in bia - rộng (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}: Số lượng bản in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCon_{length}{{< /katex >}}: Khổ máy in ruột - dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCon_{width}{{< /katex >}}: Khổ máy in ruột - rộng (cm)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}M_{imp}{{< /katex >}}: Đơn giá bản in (VNĐ/CM²)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}P_c{{< /katex >}}: Số bản offset bìa (Bản)<br>
+{{< katex >}}B_{c,l}{{< /katex >}}: Khổ bản bìa - dài (cm)<br>
+{{< katex >}}B_{c,w}{{< /katex >}}: Khổ bản bìa - rộng (cm)<br>
+{{< katex >}}P_t{{< /katex >}}: Số bản offset ruột (Bản)<br>
+{{< katex >}}B_{t,l}{{< /katex >}}: Khổ bản ruột - dài (cm)<br>
+{{< katex >}}B_{t,w}{{< /katex >}}: Khổ bản ruột - rộng (cm)<br>
+{{< katex >}}P_{plate}{{< /katex >}}: Đơn giá bản offset (VNĐ/cm²)<br>
 
   {{< /details >}}
-- **Chi phí mực in**
-  * *Công thức tính chi phí mực in*
+- **Chi phí mực**
+  * *Khối lượng mực nhân đơn giá; không nhân lại số bản.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCMI
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{ink}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PC_{cover} * \mathcal{M}\mathscr{c}IW{cover} + \mathcal{M}\mathscr{c}PC_{content} * \mathcal{M}\mathscr{c}IW{content}) * \mathcal{S}\mathscr{i}M_{ink}}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_{ink}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(I_c + I_t) * P_{ink}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}: Số lượng bản in bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}IW{cover}{{< /katex >}}: Khối lượng mực in bìa (kg)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}: Số lượng bản in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}IW{content}{{< /katex >}}: Khối lượng mực in ruột (kg)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}M_{ink}{{< /katex >}}: Đơn giá mực (VNĐ/KG)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}I_c{{< /katex >}}: Khối lượng mực bìa (kg)<br>
+{{< katex >}}I_t{{< /katex >}}: Khối lượng mực ruột (kg)<br>
+{{< katex >}}P_{ink}{{< /katex >}}: Đơn giá mực (VNĐ/kg)<br>
 
   {{< /details >}}
-- **Chi phí màng bìa**
-  * *Công thức tính chi phí màng bìa*
+- **Chi phí màng**
+  * *Diện tích màng theo m² nhân đơn giá.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCMB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{film}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{c}Fl{length} * \mathcal{S}\mathscr{i}M_{film}}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_f{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{A_f * P_{film}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Fl{length}{{< /katex >}}: Diện tích màng bìa (cm²)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}M_{film}{{< /katex >}}: Đơn giá màng bìa (VNĐ/cm²)<br>
-
-  {{< /details >}}
-- **Chi phí nguyên vật liệu**
-  * *Công thức tính chi phí nguyên vật liệu*
-  * *Đơn vị*: VNĐ
-  * *Mã*: MATPRCVL
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{material}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{c}Prc{paper} + \mathcal{M}\mathscr{c}Prc{impression} + \mathcal{M}\mathscr{c}Prc{ink} + \mathcal{M}\mathscr{c}Prc{film} }\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Prc{paper}{{< /katex >}}: Chi phí giấy (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{impression}{{< /katex >}}: Chi phí bản in (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{ink}{{< /katex >}}: Chi phí mực in (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{film}{{< /katex >}}: Chi phí màng bìa (VNĐ)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}A_f{{< /katex >}}: Diện tích màng bìa (m²)<br>
+{{< katex >}}P_{film}{{< /katex >}}: Đơn giá màng bìa (VNĐ/m²)<br>
 
   {{< /details >}}
 - **Chi phí chế bản**
-  * *Công thức tính chi phí chế bản*
+  * *Chi phí dịch vụ trên tổng số bản offset.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCCB
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{engraving}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}0_{engraving} * (\mathcal{M}\mathscr{c}PC_{cover} * \mathcal{M}\mathscr{c}PrterCov_{length} * \mathcal{M}\mathscr{c}PrterCov_{width} + \mathcal{M}\mathscr{c}PC_{content} * \mathcal{M}\mathscr{c}PrterCon_{length} * \mathcal{M}\mathscr{c}PrterCon_{width})}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_{prep}{{< /katex >}}
+  * *Công thức* :{{< katex >}}(P_c + P_t) * C_{prepress}{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}0_{engraving}{{< /katex >}}: Đơn giá chế bản (VNĐ/trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}: Số lượng bản in bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCov_{length}{{< /katex >}}: Khổ máy in bìa - dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCov_{width}{{< /katex >}}: Khổ máy in bia - rộng (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}: Số lượng bản in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCon_{length}{{< /katex >}}: Khổ máy in ruột - dài (cm)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PrterCon_{width}{{< /katex >}}: Khổ máy in ruột - rộng (cm)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}P_c{{< /katex >}}: Số bản offset bìa (Bản)<br>
+{{< katex >}}P_t{{< /katex >}}: Số bản offset ruột (Bản)<br>
+{{< katex >}}C_{prepress}{{< /katex >}}: Chi phí chế bản mỗi bản (VNĐ/Bản)<br>
 
   {{< /details >}}
-- **Chi phí in bìa sách**
-  * *Công thức tính chi phí in bìa sách*
+- **Chi phí chạy máy in**
+  * *Setup theo khuôn-lượt cộng chi phí biến đổi theo lượt tờ.*
   * *Đơn vị*: VNĐ
-  * *Mã*: MATPRCBS
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover} * \mathcal{M}\mathscr{i}0_{in1000} + (\mathcal{M}\mathscr{c}PN{cover} - 1000) * \mathcal{M}\mathscr{i}0_{after1000} * \mathcal{M}\mathscr{i}Ncl_{cover}{{< /katex >}}
+  * *Mã*: MATPRCPR
+  * *Kí hiệu*: {{< katex >}}C_{press}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(F_c * r_c + F_t * r_t) * C_{setup} + (N_{c,run} * r_c + N_{t,run} * r_t + N_{c,set} + N_{t,set}) * C_{impression}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}: Số lượng bản in bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{in1000}{{< /katex >}}: Đơn giá in - 1000 lượt đầu (VNĐ/1000 lượt)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PN{cover}{{< /katex >}}: Số lượng tờ in bìa (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{after1000}{{< /katex >}}: Đơn giá in - 1000 lượt sau (VNĐ/lượt)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{cover}{{< /katex >}}: Số màu in bia (Đơn vị)<br>
-
-  {{< /details >}}
-- **Chi phí in ruột sách**
-  * *Công thức tính chi phí in ruột sách*
-  * *Đơn vị*: VNĐ
-  * *Mã*: MATPRCRS
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{M}\mathscr{c}PC_{content} * \mathcal{M}\mathscr{i}0_{in1000} + (\mathcal{M}\mathscr{c}PN{content} - \mathcal{M}\mathscr{c}PC_{content} * 1000) * \mathcal{M}\mathscr{i}0_{after1000} * \mathcal{M}\mathscr{i}Ncl_{content} * \mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}: Số lượng bản in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{in1000}{{< /katex >}}: Đơn giá in - 1000 lượt đầu (VNĐ/1000 lượt)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PN{content}{{< /katex >}}: Số lượng tờ in ruột (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{after1000}{{< /katex >}}: Đơn giá in - 1000 lượt sau (VNĐ/lượt)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{content}{{< /katex >}}: Số màu in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}F_c{{< /katex >}}: Số khuôn bìa (Khuôn)<br>
+{{< katex >}}r_c{{< /katex >}}: Tổng lượt chạy bìa mỗi khuôn (Lượt/Khuôn)<br>
+{{< katex >}}F_t{{< /katex >}}: Số khuôn ruột (Khuôn)<br>
+{{< katex >}}r_t{{< /katex >}}: Tổng lượt chạy ruột mỗi khuôn (Lượt/Khuôn)<br>
+{{< katex >}}C_{setup}{{< /katex >}}: Chi phí setup mỗi khuôn-lượt (VNĐ)<br>
+{{< katex >}}N_{c,run}{{< /katex >}}: Tờ chạy bìa sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}N_{t,run}{{< /katex >}}: Tờ chạy ruột sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}N_{c,set}{{< /katex >}}: Tờ căn chỉnh bìa (Tờ)<br>
+{{< katex >}}N_{t,set}{{< /katex >}}: Tờ căn chỉnh ruột (Tờ)<br>
+{{< katex >}}C_{impression}{{< /katex >}}: Chi phí mỗi lượt tờ qua máy (VNĐ/Lượt tờ)<br>
 
   {{< /details >}}
-- **Chi phí gia công**
-  * *Công thức tính chi phí gia công*
+- **Chi phí hoàn thiện**
+  * *Phần theo tay sách cộng phần theo cuốn trên sản lượng gộp.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCGC
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{manufacture}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}{\Sigma}pg_{content} * \mathcal{M}\mathscr{i}C_{copies} * \mathcal{M}\mathscr{i}0_{manufacture}}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_{finish}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{Q_g * n_s * C_{signature} + Q_g * C_{book}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}0_{manufacture}{{< /katex >}}: Đơn giá gia công sách (VNĐ/trang)<br>
-
-  {{< /details >}}
-- **Chi phí sản xuất**
-  * *Công thức tính tổng chi phí sản xuất*
-  * *Đơn vị*: VNĐ
-  * *Mã*: MATPRCSX
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{production}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{c}Prc{engraving} + \mathcal{M}\mathscr{c}Prc{cover} + \mathcal{M}\mathscr{c}Prc{content} + \mathcal{M}\mathscr{c}Prc{manufacture}}\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Prc{engraving}{{< /katex >}}: Chi phí chế bản (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{cover}{{< /katex >}}: Chi phí in bìa sách (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{content}{{< /katex >}}: Chi phí in ruột sách (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{manufacture}{{< /katex >}}: Chi phí gia công (VNĐ)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
+{{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
+{{< katex >}}C_{signature}{{< /katex >}}: Chi phí hoàn thiện mỗi tay sách (VNĐ/Tay)<br>
+{{< katex >}}C_{book}{{< /katex >}}: Chi phí hoàn thiện mỗi cuốn (VNĐ/Cuốn)<br>
 
   {{< /details >}}
 - **Chi phí đơn hàng**
-  * *Công thức tính tổng chi phí đơn hàng*
+  * *Tổng vật tư, chế bản, chạy máy, hoàn thiện và khoản khác.*
   * *Đơn vị*: VNĐ
   * *Mã*: MATPRCDH
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{order}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{c}Prc{material} + \mathcal{M}\mathscr{c}Prc{production}}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_{order}{{< /katex >}}
+  * *Công thức* :{{< katex >}}C_p + C_{plate} + C_{ink} + C_f + C_{prep} + C_{press} + C_pC + C_{other}{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Prc{material}{{< /katex >}}: Chi phí nguyên vật liệu (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Prc{production}{{< /katex >}}: Chi phí sản xuất (VNĐ)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}C_p{{< /katex >}}: Chi phí giấy (VNĐ)<br>
+{{< katex >}}C_{plate}{{< /katex >}}: Chi phí vật tư bản (VNĐ)<br>
+{{< katex >}}C_{ink}{{< /katex >}}: Chi phí mực (VNĐ)<br>
+{{< katex >}}C_f{{< /katex >}}: Chi phí màng (VNĐ)<br>
+{{< katex >}}C_{prep}{{< /katex >}}: Chi phí chế bản (VNĐ)<br>
+{{< katex >}}C_{press}{{< /katex >}}: Chi phí chạy máy in (VNĐ)<br>
+{{< katex >}}C_{finish}{{< /katex >}}: Chi phí hoàn thiện (VNĐ)<br>
+{{< katex >}}C_{other}{{< /katex >}}: Chi phí đơn hàng khác (VNĐ)<br>
 
   {{< /details >}}
-- **Đơn giá một sản phẩm**
-  * *Đơn giá trung bình cho một sản phẩm*
-  * *Đơn vị*: VNĐ
+- **Chi phí tính toán mỗi cuốn giao**
+  * *Chi phí đơn hàng chia số cuốn tốt cần giao; chưa phải báo giá bán.*
+  * *Đơn vị*: VNĐ/Cuốn
   * *Mã*: MATPRSIN
-  * *Kí hiệu*: {{< katex >}}\mathcal{M}\mathscr{c}Prc{single}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{c}Prc{order} / \mathcal{M}\mathscr{i}C_{copies}}\rceil{{< /katex >}}
+  * *Kí hiệu*: {{< katex >}}C_u{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{C_{order} / Q}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}Prc{order}{{< /katex >}}: Chi phí đơn hàng (VNĐ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}C_{order}{{< /katex >}}: Chi phí đơn hàng (VNĐ)<br>
+{{< katex >}}Q{{< /katex >}}: Số lượng thành phẩm (Cuốn)<br>
 
   {{< /details >}}
 ### Tính Toán Thời Gian
@@ -507,10 +660,10 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRKTT
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}Ktr_{txt}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}{\Sigma}pg * (\mathcal{M}\mathscr{i}TI/(\mathcal{M}\mathscr{i}TI + 1)) / \mathcal{C}\mathscr{i}Det_{txt} * \mathcal{C}\mathscr{i}No_{txt}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{p * (r/(r + 1)) / (\mathcal{C}\mathscr{i}Det_{txt} * \mathcal{C}\mathscr{i}No_{txt})}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg{{< /katex >}}: Tổng số trang sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}TI{{< /katex >}}: Tỉ lệ chữ/ảnh trong file in (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p{{< /katex >}}: Tổng số trang khách hàng (Trang)<br>
+{{< katex >}}r{{< /katex >}}: Tỷ lệ trang chữ trên trang ảnh (Hệ số)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{txt}{{< /katex >}}: Năng lực soát lỗi, kiểm tra file chữ (Trang/Phút)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}No_{txt}{{< /katex >}}: Nhân lực soát lỗi, kiểm tra file chữ (Người|Thiết bị)<br>
 
@@ -520,10 +673,10 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRKTI
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}Ktr_{img}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}{\Sigma}pg * (1/(\mathcal{M}\mathscr{i}TI+1)) / \mathcal{C}\mathscr{i}Det_{img} * \mathcal{C}\mathscr{i}No_{img}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{p * (1/(r+1)) / (\mathcal{C}\mathscr{i}Det_{img} * \mathcal{C}\mathscr{i}No_{img})}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg{{< /katex >}}: Tổng số trang sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}TI{{< /katex >}}: Tỉ lệ chữ/ảnh trong file in (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p{{< /katex >}}: Tổng số trang khách hàng (Trang)<br>
+{{< katex >}}r{{< /katex >}}: Tỷ lệ trang chữ trên trang ảnh (Hệ số)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{img}{{< /katex >}}: Năng lực xử lý ảnh, kiểm tra file ảnh (Trang/Phút)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}No_{img}{{< /katex >}}: Nhân lực xử lý ảnh, kiểm tra file ảnh (Người|Thiết bị)<br>
 
@@ -533,9 +686,9 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTDT
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}T_{layout}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{M}\mathscr{i}{\Sigma}pg * \mathcal{C}\mathscr{i}Det_{layout}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{p * \mathcal{C}\mathscr{i}Det_{layout}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg{{< /katex >}}: Tổng số trang sách (Trang)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p{{< /katex >}}: Tổng số trang khách hàng (Trang)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{layout}{{< /katex >}}: Năng lực xử lý dàn trang (Phút/Trang)<br>
 
   {{< /details >}}
@@ -554,12 +707,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTIT
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}test_print{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(((\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/\mathcal{M}\mathscr{i}Imp_{content})*\mathcal{M}\mathscr{i}Nsd_{content} + \mathcal{M}\mathscr{i}Nsd_{cover}))/\mathcal{C}\mathscr{i}Det_{vtpr} + \mathcal{C}\mathscr{i}Det_{cbtpr}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(((p_t/i_t)*d_t + d_c))/\mathcal{C}\mathscr{i}Det_{vtpr} + \mathcal{C}\mathscr{i}Det_{cbtpr}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}: Số mặt in bìa (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}p_t{{< /katex >}}: Số trang ruột khách hàng (Trang)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
+{{< katex >}}d_t{{< /katex >}}: Số mặt in ruột (Mặt)<br>
+{{< katex >}}d_c{{< /katex >}}: Số mặt in bìa (Mặt)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{vtpr}{{< /katex >}}: Tốc độ in thử (Tờ/Phút)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{cbtpr}{{< /katex >}}: Thời gian chuẩn bị in thử (Phút)<br>
 
@@ -569,12 +722,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTRIP
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}rip{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(((\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/\mathcal{M}\mathscr{i}Imp_{content})*\mathcal{M}\mathscr{i}Nsd_{content} + \mathcal{M}\mathscr{i}Nsd_{cover})) * \mathcal{C}\mathscr{i}Det_{rip}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{((F_t * d_t + F_c * d_c)) / \mathcal{C}\mathscr{i}Det_{rip}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}: Số mặt in bìa (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}F_t{{< /katex >}}: Số khuôn ruột (Khuôn)<br>
+{{< katex >}}d_t{{< /katex >}}: Số mặt in ruột (Mặt)<br>
+{{< katex >}}F_c{{< /katex >}}: Số khuôn bìa (Khuôn)<br>
+{{< katex >}}d_c{{< /katex >}}: Số mặt in bìa (Mặt)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{rip}{{< /katex >}}: Tốc độ RIP (Mặt/Phút)<br>
 
   {{< /details >}}
@@ -583,10 +736,10 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTPLM
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pp}platemaking{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PC_{cover} + \mathcal{M}\mathscr{c}PC_{content}) * \mathcal{C}\mathscr{i}Det_{platemaking}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(P_c + P_t) * \mathcal{C}\mathscr{i}Det_{platemaking}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PC_{cover}{{< /katex >}}: Số lượng bản in bìa (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}PC_{content}{{< /katex >}}: Số lượng bản in ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}P_c{{< /katex >}}: Số bản offset bìa (Bản)<br>
+{{< katex >}}P_t{{< /katex >}}: Số bản offset ruột (Bản)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{platemaking}{{< /katex >}}: Tốc độ ghi hiện bản (Phút/Bản)<br>
 
   {{< /details >}}
@@ -622,14 +775,11 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRPRCOV
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}P_{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PN{cover} * \lceil{ \mathcal{M}\mathscr{i}Ncl_{cover} / \mathcal{M}\mathscr{i}PrterCov_{unit}}\rceil * (\mathcal{M}\mathscr{i}Nsd_{cover} / \mathcal{M}\mathscr{i}PrterCov_{speed}) * 60/ \mathcal{M}\mathscr{i}PrterCov_{side})}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(N_{c,run} * r_c) * 60 / \mathcal{M}\mathscr{i}PrterCov_{speed}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PN{cover}{{< /katex >}}: Số lượng tờ in bìa (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{cover}{{< /katex >}}: Số màu in bia (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}PrterCov_{unit}{{< /katex >}}: Số màu máy in bìa hỗ trợ (Màu)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{cover}{{< /katex >}}: Số mặt in bìa (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_{c,run}{{< /katex >}}: Tờ chạy bìa sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}r_c{{< /katex >}}: Tổng lượt chạy bìa mỗi khuôn (Lượt/Khuôn)<br>
 {{< katex >}}\mathcal{M}\mathscr{i}PrterCov_{speed}{{< /katex >}}: Tốc độ máy in bìa (Tờ/Giờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}PrterCov_{side}{{< /katex >}}: Số mặt máy in bìa hỗ trợ (Mặt)<br>
 
   {{< /details >}}
 - **In ruột**
@@ -637,14 +787,33 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRPRCON
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}P_{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PN{content} * \lceil{ \mathcal{M}\mathscr{i}Ncl_{content} / \mathcal{M}\mathscr{i}PrterCon_{unit}}\rceil * (\mathcal{M}\mathscr{i}Nsd_{content} / \mathcal{M}\mathscr{i}PrterCon_{speed}) * 60/ \mathcal{M}\mathscr{i}PrterCon_{side})}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(N_{t,run} * r_t) * 60 / \mathcal{M}\mathscr{i}PrterCon_{speed}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PN{content}{{< /katex >}}: Số lượng tờ in ruột (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Ncl_{content}{{< /katex >}}: Số màu in ruột (Đơn vị)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}PrterCon_{unit}{{< /katex >}}: Số màu máy in ruột hỗ trợ (Màu)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Nsd_{content}{{< /katex >}}: Số mặt in ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_{t,run}{{< /katex >}}: Tờ chạy ruột sau hao hụt biến đổi (Tờ)<br>
+{{< katex >}}r_t{{< /katex >}}: Tổng lượt chạy ruột mỗi khuôn (Lượt/Khuôn)<br>
 {{< katex >}}\mathcal{M}\mathscr{i}PrterCon_{speed}{{< /katex >}}: Tốc độ máy in ruột (Tờ/Giờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}PrterCon_{side}{{< /katex >}}: Số mặt máy in ruột hỗ trợ (Mặt)<br>
+
+  {{< /details >}}
+- **Căn chỉnh in bìa**
+  * *Thời gian make-ready máy in cho bìa (lắp bản, canh mực, canh chồng màu). Tách riêng khỏi thời gian chạy in; = số bản in × phút mỗi bản (số bản = khuôn × màu × mặt).*
+  * *Đơn vị*: Phút
+  * *Mã*: CHRCCINB
+  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}Mk_{cover}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{P_c * \mathcal{C}\mathscr{i}Prep_{PrintCover}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}P_c{{< /katex >}}: Số bản offset bìa (Bản)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Prep_{PrintCover}{{< /katex >}}: Căn chỉnh in bìa — phút mỗi bản (Phút/Bản)<br>
+
+  {{< /details >}}
+- **Căn chỉnh in ruột**
+  * *Thời gian make-ready máy in cho ruột (lắp bản, canh mực, canh chồng màu). Tách riêng khỏi thời gian chạy in; = số bản in × phút mỗi bản (số bản = khuôn × màu × mặt).*
+  * *Đơn vị*: Phút
+  * *Mã*: CHRCCINR
+  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}Mk_{content}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{P_t * \mathcal{C}\mathscr{i}Prep_{PrintContent}}\rceil{{< /katex >}}
+
+  {{< details "Thành Phần" >}}{{< katex >}}P_t{{< /katex >}}: Số bản offset ruột (Bản)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Prep_{PrintContent}{{< /katex >}}: Căn chỉnh in ruột — phút mỗi bản (Phút/Bản)<br>
 
   {{< /details >}}
 - **Thời gian in khác**
@@ -662,10 +831,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRSMPR
   * *Kí hiệu*: {{< katex >}}\mathcal{C}{\Sigma}PRT{{< /katex >}}
-  * *Công thức* :{{< katex >}}\mathcal{C}\mathscr{pr}P_{cover} + \mathcal{C}\mathscr{pr}P_{content} + \mathcal{C}\mathscr{i}Other_{printing}{{< /katex >}}
+  * *Công thức* :{{< katex >}}\mathcal{C}\mathscr{pr}P_{cover} + \mathcal{C}\mathscr{pr}P_{content} + \mathcal{C}\mathscr{pr}Mk_{cover} + \mathcal{C}\mathscr{pr}Mk_{content} + \mathcal{C}\mathscr{i}Other_{printing}{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}\mathcal{C}\mathscr{pr}P_{cover}{{< /katex >}}: In bìa (Phút)<br>
 {{< katex >}}\mathcal{C}\mathscr{pr}P_{content}{{< /katex >}}: In ruột (Phút)<br>
+{{< katex >}}\mathcal{C}\mathscr{pr}Mk_{cover}{{< /katex >}}: Căn chỉnh in bìa (Phút)<br>
+{{< katex >}}\mathcal{C}\mathscr{pr}Mk_{content}{{< /katex >}}: Căn chỉnh in ruột (Phút)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Other_{printing}{{< /katex >}}: Thời gian in khác (Phút)<br>
 
   {{< /details >}}
@@ -674,10 +845,10 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTGCM
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Lamination{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\mathcal{C}\mathscr{i}Det_{machinepreparation} + (\mathcal{M}\mathscr{c}Fl{length} / \mathcal{C}\mathscr{i}Det_{processing})}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{\mathcal{C}\mathscr{i}Det_{machinepreparation} + (l_f / \mathcal{C}\mathscr{i}Det_{processing})}\rceil{{< /katex >}}
 
   {{< details "Thành Phần" >}}{{< katex >}}\mathcal{C}\mathscr{i}Det_{machinepreparation}{{< /katex >}}: Thời gian chuẩn bị máy cán màng (Phút)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}Fl{length}{{< /katex >}}: Độ dài màng bìa (m)<br>
+{{< katex >}}l_f{{< /katex >}}: Chiều dài màng chạy (m)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{processing}{{< /katex >}}: Tốc độ cán màng (m/Phút)<br>
 
   {{< /details >}}
@@ -686,13 +857,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRKFPB
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}KnifePhase_{cover}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\lceil{(\mathcal{M}\mathscr{c}PN{cover} * \mathcal{M}\mathscr{i}{\Rho}pp_{cover} * 10^-4)/\mathcal{C}\mathscr{i}DetPackHeight_{cover}}\rceil * \mathcal{C}\mathscr{i}DetKnifePhase_{cover} * \mathcal{M}\mathscr{c}knife_phase_mod{cover}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{\lceil{(N_c * t_c * 0.0001) / \mathcal{C}\mathscr{i}DetPackHeight_{cover}}\rceil * \mathcal{C}\mathscr{i}DetKnifePhase_{cover}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PN{cover}{{< /katex >}}: Số lượng tờ in bìa (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Rho}pp_{cover}{{< /katex >}}: Định lượng giấy bìa (g/m²)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_c{{< /katex >}}: Tổng tờ giấy bìa tiêu thụ (Tờ)<br>
+{{< katex >}}t_c{{< /katex >}}: Caliper giấy bìa (µm)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}DetPackHeight_{cover}{{< /katex >}}: Chiều cao tối đa của chồng cắt - bìa (CM)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}DetKnifePhase_{cover}{{< /katex >}}: Tốc độ chuẩn bị và cắt một nhát thực tế - bìa (Chồng/Phút)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}knife_phase_mod{cover}{{< /katex >}}: Hệ số pha cắt bìa (đơn vị)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}DetKnifePhase_{cover}{{< /katex >}}: Thời gian chuẩn bị và cắt một nhát - bìa (Phút/Chồng)<br>
 
   {{< /details >}}
 - **Pha cắt ruột**
@@ -700,13 +870,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRKFPR
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}KnifePhase_{content}{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{c}PN{content} * \mathcal{M}\mathscr{i}{\Rho}pp_{content}  * \mathcal{C}\mathscr{i}DetKnifePhase_{content} * \mathcal{M}\mathscr{c}knife_phase_mod{content} * 10^-4)/\mathcal{C}\mathscr{i}DetPackHeight_{content}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{\lceil{(N_t * t_t * 0.0001) / \mathcal{C}\mathscr{i}DetPackHeight_{content}}\rceil * \mathcal{C}\mathscr{i}DetKnifePhase_{content}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PN{content}{{< /katex >}}: Số lượng tờ in ruột (tờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Rho}pp_{content}{{< /katex >}}: Định lượng giấy ruột (g/m²)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}DetKnifePhase_{content}{{< /katex >}}: Tốc độ chuẩn bị và cắt một nhát thực tế - ruột (Chồng/Phút)<br>
-{{< katex >}}\mathcal{M}\mathscr{c}knife_phase_mod{content}{{< /katex >}}: Hệ số pha cắt ruột (đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_t{{< /katex >}}: Tổng tờ giấy ruột tiêu thụ (Tờ)<br>
+{{< katex >}}t_t{{< /katex >}}: Caliper giấy ruột (µm)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}DetPackHeight_{content}{{< /katex >}}: Chiều cao tối đa của chồng cắt - ruột (CM)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}DetKnifePhase_{content}{{< /katex >}}: Thời gian chuẩn bị và cắt một nhát - ruột (Phút/Chồng)<br>
 
   {{< /details >}}
 - **Gấp sách**
@@ -714,24 +883,23 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTGGS
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Folding{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{\lceil{(\mathcal{M}\mathscr{c}PN{content} * 60) / \mathcal{C}\mathscr{i}Det_{Foldingmachinefin}}\rceil + \lceil{\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/ \mathcal{M}\mathscr{i}Imp_{content}}\rceil * \mathcal{C}\mathscr{i}Det_{Foldingmachineprep}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{\lceil{(N_t * 60) / \mathcal{C}\mathscr{i}Det_{Foldingmachinefin}}\rceil + \lceil{p_t/ i_t}\rceil * \mathcal{C}\mathscr{i}Det_{Foldingmachineprep}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{c}PN{content}{{< /katex >}}: Số lượng tờ in ruột (tờ)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{Foldingmachinefin}{{< /katex >}}: Tốc độ máy gấp sách (Tay sách/Phút)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}N_t{{< /katex >}}: Tổng tờ giấy ruột tiêu thụ (Tờ)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Det_{Foldingmachinefin}{{< /katex >}}: Tốc độ máy gấp sách (Tay sách/Giờ)<br>
+{{< katex >}}p_t{{< /katex >}}: Số trang ruột khách hàng (Trang)<br>
+{{< katex >}}i_t{{< /katex >}}: Kiểu bình ruột (Trang/tờ)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{Foldingmachineprep}{{< /katex >}}: Thời gian chuẩn bị máy gấp sách (Phút)<br>
 
   {{< /details >}}
 - **Bắt tay sách**
-  * *Thời gian bắt tay sách, dùng máy kỵ mã liên hợp*
+  * *Thời gian gom tay sách thành khối ruột*
   * *Đơn vị*: Phút
   * *Mã*: CHRTGKBTS
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Collating{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * 60) / \mathcal{C}\mathscr{i}Det_{Collating} + \mathcal{C}\mathscr{i}Prep_{Collating}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(Q_g * 60) / \mathcal{C}\mathscr{i}Det_{Collating} + \mathcal{C}\mathscr{i}Prep_{Collating}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{Collating}{{< /katex >}}: Tốc độ bắt tay sách (Cuốn/Giờ)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Prep_{Collating}{{< /katex >}}: Thời gian chuẩn bị bắt tay sách (Phút)<br>
 
@@ -741,38 +909,22 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTGKC
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Sewing{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{((\mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf}) / \mathcal{C}\mathscr{i}Det_{SewingachineSpd}) * \lceil{\mathcal{M}\mathscr{i}{\Sigma}pg_{content}/ \mathcal{M}\mathscr{i}Imp_{content}}\rceil + \mathcal{C}\mathscr{i}Det_{SewingMachinePrep}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(Q_g * n_s * 60) / \mathcal{C}\mathscr{i}Det_{SewingachineSpd} + \mathcal{C}\mathscr{i}Det_{SewingMachinePrep}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{SewingachineSpd}{{< /katex >}}: Tốc độ máy khâu chỉghim (Tờ/Giờ)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}{\Sigma}pg_{content}{{< /katex >}}: Số trang ruột mỗi cuốn sách (Trang)<br>
-{{< katex >}}\mathcal{M}\mathscr{i}Imp_{content}{{< /katex >}}: Kiểu bình - Ruột (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
+{{< katex >}}n_s{{< /katex >}}: Số tay sách mỗi cuốn (Tay/Cuốn)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Det_{SewingachineSpd}{{< /katex >}}: Tốc độ máy khâu chỉ (Chu kỳ tay sách/Giờ)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{SewingMachinePrep}{{< /katex >}}: Thời gian chuẩn bị máy khâu chỉ (Phút)<br>
 
   {{< /details >}}
-- **Vào keo**
-  * *Thời gian vào keo*
-  * *Đơn vị*: Phút
-  * *Mã*: CHRTGVK
-  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Glue{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * 60) / \mathcal{C}\mathscr{i}Det_{Glue} + \mathcal{C}\mathscr{i}Prep_{Glue}}\rceil{{< /katex >}}
-
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{Glue}{{< /katex >}}: Tốc độ vào keo (Cuốn/Giờ)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Prep_{Glue}{{< /katex >}}: Thời gian chuẩn bị vào keo (Phút)<br>
-
-  {{< /details >}}
 - **Vào bìa**
-  * *Thời gian vào bìa*
+  * *Thời gian bôi keo gáy và vào bìa cho ruột đã khâu chỉ*
   * *Đơn vị*: Phút
   * *Mã*: CHRTGV
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Covering{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * 60) / \mathcal{C}\mathscr{i}Det_{Covering} + \mathcal{C}\mathscr{i}Prep_{Covering}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(Q_g * 60) / \mathcal{C}\mathscr{i}Det_{Covering} + \mathcal{C}\mathscr{i}Prep_{Covering}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{Covering}{{< /katex >}}: Tốc độ vào bìa (Cuốn/Giờ)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Prep_{Covering}{{< /katex >}}: Thời gian chuẩn bị vào bìa (Phút)<br>
 
@@ -782,10 +934,9 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTGXEN
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Trim{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}C_{copies} * \mathcal{S}\mathscr{i}O_{wf} * 60) / \mathcal{C}\mathscr{i}Det_{Trim} + \mathcal{C}\mathscr{i}Prep_{Trim}}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{(Q_g * 60) / \mathcal{C}\mathscr{i}Det_{Trim} + \mathcal{C}\mathscr{i}Prep_{Trim}}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{S}\mathscr{i}O_{wf}{{< /katex >}}: Hệ số bù hao (Đơn vị)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q_g{{< /katex >}}: Số khối ruột cần sản xuất (Cuốn)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Det_{Trim}{{< /katex >}}: Tốc độ vào bìa, xén 3 mặt (Cuốn/Giờ)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}Prep_{Trim}{{< /katex >}}: Thời gian chuẩn bị vào bìa, xén 3 mặt (Phút)<br>
 
@@ -795,12 +946,12 @@ Khâu chỉ bìa keo nhiệt là phương pháp gia công sách phổ biến, s�
   * *Đơn vị*: Phút
   * *Mã*: CHRTGDG
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Packaging{{< /katex >}}
-  * *Công thức* :{{< katex >}}\lceil{(\mathcal{M}\mathscr{i}C_{copies} * \mathcal{C}\mathscr{i}Det_{Packaging}) / (\mathcal{C}\mathscr{i}NoBookPerPack * \mathcal{C}\mathscr{i}NoBookPerPack)  * 1.618^((\mathcal{C}\mathscr{i}NoBookPerPack -1 )/\mathcal{C}\mathscr{i}NoBookPerPack)}\rceil{{< /katex >}}
+  * *Công thức* :{{< katex >}}\lceil{\lceil{Q / \mathcal{C}\mathscr{i}NoBookPerPack}\rceil * \mathcal{C}\mathscr{i}Det_{Packaging} / \mathcal{C}\mathscr{i}NoPackWorker}\rceil{{< /katex >}}
 
-  {{< details "Thành Phần" >}}{{< katex >}}\mathcal{M}\mathscr{i}C_{copies}{{< /katex >}}: Số lượng sản phẩm (Bản)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}Det_{Packaging}{{< /katex >}}: Tốc độ đóng gói trung bình (Phút/Gói)<br>
+  {{< details "Thành Phần" >}}{{< katex >}}Q{{< /katex >}}: Số lượng thành phẩm (Cuốn)<br>
 {{< katex >}}\mathcal{C}\mathscr{i}NoBookPerPack{{< /katex >}}: Số sách mỗi gói (Cuốn)<br>
-{{< katex >}}\mathcal{C}\mathscr{i}NoBookPerPack{{< /katex >}}: Số nhân công đóng gói (Cuốn)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}Det_{Packaging}{{< /katex >}}: Tốc độ đóng gói trung bình (Phút/Gói)<br>
+{{< katex >}}\mathcal{C}\mathscr{i}NoPackWorker{{< /katex >}}: Số nhân công đóng gói (Người)<br>
 
   {{< /details >}}
 - **Thời gian hoàn thiện khác**

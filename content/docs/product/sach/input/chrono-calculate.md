@@ -82,6 +82,18 @@ Dưới đây là những kết quả tính toán liên quan tới giá trị th
   * *Mã*: CHRPRCON
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}P_{content}{{< /katex >}}
 
+- **Căn chỉnh in bìa**
+  * *Thời gian make-ready máy in cho bìa (lắp bản, canh mực, canh chồng màu). Tách riêng khỏi thời gian chạy in; = số bản in × phút mỗi bản (số bản = khuôn × màu × mặt).*
+  * *Đơn vị*: Phút
+  * *Mã*: CHRCCINB
+  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}Mk_{cover}{{< /katex >}}
+
+- **Căn chỉnh in ruột**
+  * *Thời gian make-ready máy in cho ruột (lắp bản, canh mực, canh chồng màu). Tách riêng khỏi thời gian chạy in; = số bản in × phút mỗi bản (số bản = khuôn × màu × mặt).*
+  * *Đơn vị*: Phút
+  * *Mã*: CHRCCINR
+  * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{pr}Mk_{content}{{< /katex >}}
+
 - **Thời gian in khác**
   * *Thời gian in khác.*
   * *Đơn vị*: Phút
@@ -122,7 +134,7 @@ Dưới đây là những kết quả tính toán liên quan tới giá trị th
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Folding{{< /katex >}}
 
 - **Bắt tay sách**
-  * *Thời gian bắt tay sách, dùng máy kỵ mã liên hợp*
+  * *Thời gian gom tay sách thành khối ruột*
   * *Đơn vị*: Phút
   * *Mã*: CHRTGKBTS
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Collating{{< /katex >}}
@@ -146,7 +158,7 @@ Dưới đây là những kết quả tính toán liên quan tới giá trị th
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Glue{{< /katex >}}
 
 - **Vào bìa**
-  * *Thời gian vào bìa*
+  * *Thời gian bôi keo gáy và vào bìa cho ruột đã khâu chỉ*
   * *Đơn vị*: Phút
   * *Mã*: CHRTGV
   * *Kí hiệu*: {{< katex >}}\mathcal{C}\mathscr{i}Covering{{< /katex >}}

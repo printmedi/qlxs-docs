@@ -13,8 +13,8 @@ Máy gấp sách là thiết bị tự động hoặc bán tự động được
 # Thông Số
 
 - **Tốc độ hoàn thành công việc gấp sách**
-  * *Định mức thời gian hoàn thành công việc - máy gấp sách*
-  * *Đơn vị*: Tay sách/Phút
+  * *Tốc độ planning của máy theo số tay sách được gấp trong một giờ.*
+  * *Đơn vị*: Tay sách/Giờ
 
 - **Tốc độ chuẩn bị máy gấp sách**
   * *Định mức thời gian chuẩn bị máy gấp sách.*
